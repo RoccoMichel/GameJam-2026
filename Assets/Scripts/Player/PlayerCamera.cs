@@ -22,8 +22,9 @@ public class PlayerCamera : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSen;
         xRotation -= mouseY;
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+       
         //Vi använder inte rotate för att vi ska kunna stoppa rotationen från att gå för långt (max 90 grader)
         player.Rotate(Vector3.up * mouseX);
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
     }
 }
