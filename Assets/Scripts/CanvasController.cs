@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class CanvasController : MonoBehaviour
 {
     public static CanvasController instance;
+    [SerializeField] private TMP_Text healthDisplay;
+
+    private Player player;
 
     private void Awake()
     {
@@ -20,8 +23,12 @@ public class CanvasController : MonoBehaviour
         if (FindAnyObjectByType<EventSystem>() == null)
             Debug.LogWarning("No Event System in Scene!");
 
-        // EXAMPLE:
-        // InstantiateMenu("BasicMenu");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+    private void Update()
+    {
+        healthDisplay.text = player.Health + " HP";
     }
 
     /// <summary>
