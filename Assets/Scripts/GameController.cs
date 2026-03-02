@@ -4,15 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController Instance { get; private set; }
+
     public bool debug;
 
     [Header("References")]
-    public static GameController instance;
     private InputAction debugAction;
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -29,7 +30,7 @@ public class GameController : MonoBehaviour
     {
         if (!debug) return;
 
-        // Text
+        // Text 
         GUI.Label(new Rect(10, 10, 100, 20), $"ms per frame: {System.Decimal.Round((decimal)(Time.deltaTime * 1000), 2)}");
 
         // Buttons
@@ -42,5 +43,15 @@ public class GameController : MonoBehaviour
         transform.position = Vector3.zero;
         gameObject.tag = "GameController";
         gameObject.name = "--- GameController ---";
+    }
+
+    private void GameOver()
+    {
+        //Load Gameover Scene
+    }
+
+    private void GameWon()
+    {
+        //Load victory scene
     }
 }
