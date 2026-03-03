@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class ProjectileAddon : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class ProjectileAddon : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else
+        else if(LayerMask.GetMask("Entity") != 3)
         {
             Destroy(gameObject);
         }
