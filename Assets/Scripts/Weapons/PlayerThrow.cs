@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class PlayerThrow : MonoBehaviour
 {
     [Header("References")]
     public Transform cam;
@@ -44,8 +44,18 @@ public class Bullet : MonoBehaviour
         // Get rigid body component
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
 
+        // calculate directions
+        Vector3 forceDirection = cam.transform.forward;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        {
+            forceDirection = (hit.point - attackPoint.position).normalized;
+        }
+
         // Add force
-        Vector3 forceToAdd = cam.transform.forward * throwForce + transform.up * throwUpwardForce;
+        Vector3 forceToAdd = forceDirection* throwForce + transform.up * throwUpwardForce;
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
