@@ -3,11 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField] private float mouseSen = 100f;
+    [SerializeField] private float mouseSen = 2.5f;
     [SerializeField] private Transform player;
     private float xRotation = 0f;
+    private InputAction lookAction;
     void Start()
     {
+        lookAction = InputSystem.actions.FindAction("Look");
         Cursor.lockState = CursorLockMode.Locked; //Låser vår mus till skärmen, och så den inte syns. 
     }
     void Update()
@@ -17,14 +19,11 @@ public class PlayerCamera : MonoBehaviour
 
     private void HandleLook()
     {
-        //Hämtar vår axis från input manager under project settings
-        float mouseX = Input.GetAxis("Mouse X") * mouseSen;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSen;
-        xRotation -= mouseY;
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-       
-        //Vi använder inte rotate för att vi ska kunna stoppa rotationen från att gå för långt (max 90 grader)
-        player.Rotate(Vector3.up * mouseX);
+        Vector2 input = lookAction.ReadValue<Vector2>() * mouseSen * Time.deltaTime;
+
+        xRotation -= input.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        player.Rotate(Vector3.up * input.x);
     }
 }
