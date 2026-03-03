@@ -7,6 +7,7 @@ public class CanvasController : MonoBehaviour
 {
     public static CanvasController instance;
     [SerializeField] private TMP_Text healthDisplay;
+    [SerializeField] private TMP_Text waveDisplay;
 
     private Player player;
 
@@ -29,6 +30,13 @@ public class CanvasController : MonoBehaviour
     private void Update()
     {
         healthDisplay.text = player.Health + " HP";
+
+    }
+
+    public void UpdateWave(int waveIndex)
+    {
+        waveDisplay.gameObject.GetComponent<Animator>().Play("Highlight");
+        waveDisplay.text = $"WAVE {waveIndex + 1}";
     }
 
     /// <summary>
