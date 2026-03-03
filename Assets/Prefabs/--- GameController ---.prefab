@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3636365001451699355}
   - component: {fileID: 451189052054931199}
+  - component: {fileID: 4465791153520545836}
   m_Layer: 0
   m_Name: --- GameController ---
   m_TagString: GameController
@@ -45,3 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+--- !u!114 &4465791153520545836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506868078563580347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab7468815d4bda458a2f8e24a28d839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveDuration: 60
+  currentWaveIndex: 0
+  waveTransitionTime: 5
+  waves: []
+  spawnPosList: []
