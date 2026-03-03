@@ -45,12 +45,12 @@ public class GameController : MonoBehaviour
         gameObject.name = "--- GameController ---";
     }
 
-    private void GameOver()
+    public void GameOver()
     {
         //Load Gameover Scene
     }
 
-    private void GameWon()
+    public void GameWon()
     {
         //Load victory scene
     }
