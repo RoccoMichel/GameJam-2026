@@ -3,13 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
-    [SerializeField] private float mouseSen = 2.5f;
+    public float mouseSen = 2.5f;
     [SerializeField] private Transform player;
     private float xRotation = 0f;
     private InputAction lookAction;
     void Start()
     {
         lookAction = InputSystem.actions.FindAction("Look");
+        mouseSen = PlayerPrefs.GetFloat("sensitivity", 10);
         Cursor.lockState = CursorLockMode.Locked; //Låser vår mus till skärmen, och så den inte syns. 
     }
     void Update()
@@ -19,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void HandleLook()
     {
-        Vector2 input = lookAction.ReadValue<Vector2>() * mouseSen * Time.deltaTime;
+        Vector2 input = lookAction.ReadValue<Vector2>() * mouseSen;
 
         xRotation -= input.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

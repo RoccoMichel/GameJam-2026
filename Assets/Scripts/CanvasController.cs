@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
@@ -9,6 +10,8 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private TMP_Text healthDisplay;
     [SerializeField] private TMP_Text waveDisplay;
 
+    private InputAction pauseAction;
+    private GameObject optionMenu;
     private Player player;
 
     private void Awake()
@@ -25,12 +28,14 @@ public class CanvasController : MonoBehaviour
             Debug.LogWarning("No Event System in Scene!");
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        pauseAction = InputSystem.actions.FindAction("Pause");
     }
 
     private void Update()
     {
         healthDisplay.text = player.Health + " HP";
-
+        if (pauseAction.WasPressedThisFrame() && optionMenu == null) 
+            optionMenu = InstantiateMenu("Options Menu");
     }
 
     public void UpdateWave(int waveIndex)
