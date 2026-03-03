@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 4382784582662599480}
   - component: {fileID: 6597680070834763957}
   - component: {fileID: 2991902569549797874}
+  - component: {fileID: 3541467810746175924}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -445,3 +446,18 @@ MonoBehaviour:
   throwKey: 323
   throwForce: 70
   throwUpwardForce: 1
+--- !u!114 &3541467810746175924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466623006971901038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d82999233ffc734d8032b15d957f9c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identity: Player
+  maxHealth: 99999
+  immortal: 0
