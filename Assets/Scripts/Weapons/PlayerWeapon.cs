@@ -6,9 +6,11 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Transform gunTransfrom;
     [SerializeField] private GameObject bullet;
 
-    [Header("Stats I guess")]
+    [Header("Stats")]
     [SerializeField] private float fireRate;
     private float timer = 1000f;
+
+
     private void Update()
     {
         timer += Time.deltaTime;

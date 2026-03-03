@@ -2,50 +2,111 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float moveSpeed = walkSpeed;
-    public float gravity = -9f;
-    public float jumpHeight = 3f;
-    Vector3 velocity;
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-    bool isGrounded;
-    private const float walkSpeed = 5f; //dela upp speed i två olika värden så vi har ett får att gå och ett för att sprinta
-    private const float runSpeed = 10f;
+    private const string isWalkingRef = "isWalking";
+    private const string isRunningRef = "isRunning";
 
+    [SerializeField] private float runSpeedDefault;
+    [SerializeField] private float walkSpeedDefault;
+    [SerializeField] private float moveSpeed;
+    private PlayerStamina playerStamina;
+
+
+    private CharacterController myCC;
+    //private MouseLook mouseLook;
+
+    private Vector3 inputVector;
+    private Vector3 movementVector;
+    private float myGravity = -10f;
+    public float momentumDampening = 5f;
+
+    [SerializeField] private Animator cameraAnimator;
+    private bool isWalking;
+    public bool isRunning;
+
+    private float staminaDepletion = 0.0009f;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        moveSpeed = walkSpeedDefault;
+        myCC = GetComponent<CharacterController>();
+        //mouseLook = GetComponent<MouseLook>();
+        playerStamina = GetComponent<PlayerStamina>();
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f; //minus två så den inte registrerar innan vi nått marken
-        }
-        float x = Input.GetAxis("Horizontal"); //Gå med WASD
-        float z = Input.GetAxis("Vertical"); //Gå med WASD
-        Vector3 move = transform.right * x + transform.forward * z; //Rör sig i den riktningen som player också tittar i
-        controller.Move(move * moveSpeed * Time.deltaTime);
-        //Ref till vår character controller som driver vår player + låter oss röra på oss
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); //Så vi kan hoppa
-        }
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-        if (Input.GetKey(KeyCode.LeftShift))
-        { //rör oss snabbare med shift
+        HasStaminaCheck();
+        GetInput();
+        MovePlayer();
+        CheckShiftRelease();
 
-            moveSpeed = runSpeed;
+        // Får kameran att röra på sig när spelaren rör på sig
+        cameraAnimator.SetBool(isWalkingRef, isWalking);
+        cameraAnimator.SetBool(isRunningRef, isRunning);
+    }
+
+    // Hanterar imput
+    void GetInput()
+    {
+
+        // Kollar om spelaren rör på sig eller står still, påverkar kameran rörelsen och momentum
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            if (Input.GetKey(KeyCode.LeftShift) && playerStamina.canRun == true)
+            {
+                moveSpeed = runSpeedDefault;
+                isRunning = true;
+                playerStamina.staminaAmount -= staminaDepletion;
+
+            }
+
+            inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            inputVector.Normalize();
+            inputVector = transform.TransformDirection(inputVector);
+            isWalking = true;
         }
         else
         {
-            moveSpeed = walkSpeed;
+            inputVector = Vector3.Lerp(inputVector, Vector3.zero, momentumDampening * Time.deltaTime);
+            isWalking = false;
+        }
+
+
+        // ändrar på spelarens rörelsevärde från input och gravitation
+        movementVector = (inputVector * moveSpeed) + (Vector3.up * myGravity);
+    }
+
+    /*private void MouseLook_OnPlayerRotate()
+    {
+        moveSpeed = 0;
+    }*/
+
+    // Får spelaren att röra på sig
+    void MovePlayer()
+    {
+        myCC.Move(movementVector * Time.deltaTime);
+    }
+
+    void CheckShiftRelease()
+    {
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = walkSpeedDefault;
+            isRunning = false;
         }
     }
 
-    private void OnDrawGizmos()
+    void HasStaminaCheck()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(groundCheck.position, .3f);
+        if (playerStamina.canRun == false)
+        {
+            isRunning = false;
+        }
+        if (isRunning == false)
+        {
+            moveSpeed = walkSpeedDefault;
+        }
     }
 }
