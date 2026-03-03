@@ -52,8 +52,8 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave(int waveIndex)
     {
-      //  GameUI.Instance.UpdateWavesDisplay(currentWaveIndex + 1);
-      // Rocco implement this with your ui if you feel like it
+        CanvasController.instance.UpdateWave(currentWaveIndex);
+        
         localCounters.Clear();
         foreach (WaveSegment segment in waves[waveIndex].segments)
         {
