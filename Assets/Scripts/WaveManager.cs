@@ -19,7 +19,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private List<GameObject> spawnPosList = new List<GameObject>();
     private List<float> localCounters = new List<float>();
 
-
+     
     private void Start()
     {
         StartNextWave();
