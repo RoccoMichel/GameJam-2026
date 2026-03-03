@@ -6,9 +6,9 @@ public class ProjectileAddon : MonoBehaviour
 {
     public int damage;
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
-    private bool targetHit;
+    public bool targetHit;
 
     private void Start()
     {
@@ -16,6 +16,11 @@ public class ProjectileAddon : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
+    {
+        ProjectileLogic(collision);
+    }
+
+    public virtual void ProjectileLogic(Collision collision)
     {
         // Make sure only to stick to the first target you hit
         if (targetHit)
@@ -36,7 +41,7 @@ public class ProjectileAddon : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if(LayerMask.GetMask("Entity") != 3)
+        else if (LayerMask.GetMask("Entity") != 3)
         {
             Destroy(gameObject);
         }
@@ -45,6 +50,6 @@ public class ProjectileAddon : MonoBehaviour
         rb.isKinematic = true;
 
         // Make sure projectile moves with target
-        transform.SetParent(collision.transform);   
+        transform.SetParent(collision.transform);
     }
 }
