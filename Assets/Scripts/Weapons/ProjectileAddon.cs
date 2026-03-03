@@ -35,6 +35,10 @@ public class ProjectileAddon : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         // Make sure projectiles sticks to surface
         rb.isKinematic = true;
