@@ -1,16 +1,45 @@
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class ProjectileAddon : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int damage;
+
+    private Rigidbody rb;
+
+    private bool targetHit;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        // Make sure only to stick to the first target you hit
+        if (targetHit)
+        {
+            return;
+        }
+        else
+        {
+            targetHit = true;
+        }
+
+        // check if you hit an enemy
+        if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+
+            enemy.Damage(damage);
+
+            Destroy(gameObject);
+        }
+
+        // Make sure projectiles sticks to surface
+        rb.isKinematic = true;
+
+        // Make sure projectile moves with target
+        transform.SetParent(collision.transform);   
     }
 }
