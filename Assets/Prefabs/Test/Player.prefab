@@ -368,9 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e5f3a4be6647d4aa081f7214199e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeedDefault: 5
-  walkSpeedDefault: 1
-  moveSpeed: 5
+  runSpeedDefault: 8
+  walkSpeedDefault: 5
+  moveSpeed: 0
   momentumDampening: 5
   cameraAnimator: {fileID: 1262604803312160609}
   isRunning: 0
@@ -459,5 +459,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identity: Player
-  maxHealth: 99999
+  maxHealth: 100
   immortal: 0
