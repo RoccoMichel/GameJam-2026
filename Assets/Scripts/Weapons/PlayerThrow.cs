@@ -55,7 +55,7 @@ public class PlayerThrow : MonoBehaviour
         }
 
         // Add force
-        Vector3 forceToAdd = forceDirection* throwForce + transform.up * throwUpwardForce;
+        Vector3 forceToAdd = forceDirection * throwForce + transform.up * throwUpwardForce;
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
