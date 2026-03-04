@@ -358,6 +358,8 @@ GameObject:
   - component: {fileID: 4382784582662599480}
   - component: {fileID: 3541467810746175924}
   - component: {fileID: 415174814343828827}
+  - component: {fileID: 4879741375537165985}
+  - component: {fileID: 520385453052210355}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -548,3 +550,31 @@ MonoBehaviour:
   weapons:
   - {fileID: 5305118535697999122}
   - {fileID: 807808945077425710}
+--- !u!114 &4879741375537165985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466623006971901038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e771c8469409e245b869476e8272345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 0}
+  - {fileID: 0}
+  selectPanelPosiiton: 0
+--- !u!114 &520385453052210355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466623006971901038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da427c91f9adbd04e99c51a77b6b1150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
