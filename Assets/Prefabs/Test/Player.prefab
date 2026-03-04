@@ -1,5 +1,109 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &868123251017680436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6665345168016001819}
+  - component: {fileID: 5305118535697999122}
+  m_Layer: 3
+  m_Name: BasicWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6665345168016001819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868123251017680436}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7405319890257007672}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5305118535697999122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868123251017680436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3860c21805bff0941a35f348d4c90edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 7354658903575774590}
+  attackPoint: {fileID: 2625805719665990411}
+  objecToThrow: {fileID: 5068884295988630467, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
+  totalThrows: 100
+  throwCooldown: 0.1
+  throwKey: 323
+  throwForce: 70
+  throwUpwardForce: 1
+--- !u!1 &1099537485725562980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3478740314747204301}
+  - component: {fileID: 807808945077425710}
+  m_Layer: 3
+  m_Name: ExplosiveWeaon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3478740314747204301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099537485725562980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7405319890257007672}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &807808945077425710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099537485725562980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3860c21805bff0941a35f348d4c90edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 7354658903575774590}
+  attackPoint: {fileID: 2625805719665990411}
+  objecToThrow: {fileID: 5068884295988630467, guid: ffe89cbccd7e0d1429a221c5bcb02d09, type: 3}
+  totalThrows: 100
+  throwCooldown: 2
+  throwKey: 323
+  throwForce: 5
+  throwUpwardForce: 3
 --- !u!1 &2479774013213506491
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f160395857c717418068516483af5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSen: 10
+  mouseSen: 1
   player: {fileID: 7405319890257007672}
 --- !u!95 &1262604803312160609
 Animator:
@@ -231,7 +335,7 @@ Transform:
   m_GameObject: {fileID: 6063033475494768035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.605, z: 0.705}
+  m_LocalPosition: {x: 0, y: 0.605, z: 1.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,8 +356,8 @@ GameObject:
   - component: {fileID: 3510821911049419949}
   - component: {fileID: 2167534570945273949}
   - component: {fileID: 4382784582662599480}
-  - component: {fileID: 2991902569549797874}
   - component: {fileID: 3541467810746175924}
+  - component: {fileID: 415174814343828827}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -277,6 +381,8 @@ Transform:
   - {fileID: 2283191692527684401}
   - {fileID: 7354658903575774590}
   - {fileID: 2625805719665990411}
+  - {fileID: 6665345168016001819}
+  - {fileID: 3478740314747204301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1394053418582378739
@@ -412,26 +518,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staminaAmount: 0
   canRun: 0
---- !u!114 &2991902569549797874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7466623006971901038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3860c21805bff0941a35f348d4c90edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 7354658903575774590}
-  attackPoint: {fileID: 2625805719665990411}
-  objecToThrow: {fileID: 5068884295988630467, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
-  totalThrows: 100
-  throwCooldown: 0.1
-  throwKey: 323
-  throwForce: 70
-  throwUpwardForce: 1
 --- !u!114 &3541467810746175924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,3 +533,18 @@ MonoBehaviour:
   identity: Player
   maxHealth: 100
   immortal: 0
+--- !u!114 &415174814343828827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466623006971901038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368254740527a51489cb8fe5ee3a0046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 5305118535697999122}
+  - {fileID: 807808945077425710}

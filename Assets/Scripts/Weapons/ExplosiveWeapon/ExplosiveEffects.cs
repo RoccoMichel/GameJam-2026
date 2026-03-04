@@ -10,6 +10,7 @@ public class ExplosiveEffects : MonoBehaviour
         connectedProjectile = FindAnyObjectByType<ProjectileAddonExplosive>();
         this.damage = connectedProjectile.damage;
         Destroy(connectedProjectile);
+        StartCoroutine(DestroyObject());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,10 +24,7 @@ public class ExplosiveEffects : MonoBehaviour
 
             StartCoroutine(DestroyObject());
         }
-        else if (other.gameObject.layer != 3)
-        {
-            StartCoroutine(DestroyObject());
-        }
+
     }
 
     IEnumerator DestroyObject()
