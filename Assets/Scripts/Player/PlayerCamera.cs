@@ -27,4 +27,9 @@ public class PlayerCamera : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         player.Rotate(Vector3.up * input.x);
     }
+
+    private void OnDestroy()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

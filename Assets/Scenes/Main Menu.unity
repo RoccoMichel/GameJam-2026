@@ -285,7 +285,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Rocco Scene
+          m_StringArgument: Game Scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1001663294
@@ -482,7 +482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 330}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 529, y: -371}
+  m_AnchoredPosition: {x: 527.619, y: -521.9634}
   m_SizeDelta: {x: 174.4332, y: 199.2338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193137577
@@ -870,7 +870,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 330}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 632, y: -199}
+  m_AnchoredPosition: {x: 627.02374, y: -281.90475}
   m_SizeDelta: {x: 174.4332, y: 199.2338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626962566

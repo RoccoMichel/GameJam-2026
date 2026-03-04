@@ -42,6 +42,12 @@ public class ProjectileAddon : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else if(collision.gameObject.GetComponent<Player>() != null)
+        {
+            Debug.Log("Projectile hit player");
+            targetHit = false;
+            return;
+        }
         else if (collision.gameObject.tag != "Player")
         {
             Destroy(gameObject);
