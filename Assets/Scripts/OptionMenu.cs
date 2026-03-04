@@ -12,7 +12,7 @@ public class OptionMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Confined;
         cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
-        slider.value = PlayerPrefs.GetFloat("sensitivity", 10);        
+        slider.value = PlayerPrefs.GetFloat("sensitivity", 1);        
         sensitivityDisplay.text = $"SENSITIVITY: {Mathf.Round(slider.value * 100) / 100}";
     }
 

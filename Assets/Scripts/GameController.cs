@@ -52,6 +52,6 @@ public class GameController : MonoBehaviour
 
     public void GameWon()
     {
-        //Load victory scene
+        SceneManager.LoadScene("WinScene");
     }
 }

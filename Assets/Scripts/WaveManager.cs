@@ -28,13 +28,8 @@ public class WaveManager : MonoBehaviour
     {
         if (currentWaveIndex >= waves.Length)
         {
-          /*  if (transform.GetComponentInChildren<RatBase>() == null)
-            {
-                Debug.Log("Waves completed");
-                PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().buildIndex}BeatGame", 1);
-
-                
-            }*/
+            GameController.Instance.GameWon();
+        
         }
         if (!isTimerOn) return;
         if (timer < waveDuration)
