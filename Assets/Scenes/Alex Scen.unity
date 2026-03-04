@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1134005433
 Transform:
   m_ObjectHideFlags: 0
@@ -690,8 +690,31 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7405319890257007672, guid: 762082362715fb84392d39be0915a38b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1913247732}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7466623006971901038, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7927842337934734370}
   m_SourcePrefab: {fileID: 100100000, guid: 762082362715fb84392d39be0915a38b, type: 3}
+--- !u!1 &7927842337934734369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7466623006971901038, guid: 762082362715fb84392d39be0915a38b, type: 3}
+  m_PrefabInstance: {fileID: 7927842337934734368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7927842337934734370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7927842337934734369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368254740527a51489cb8fe5ee3a0046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1134005434}
+  - {fileID: 1913247733}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

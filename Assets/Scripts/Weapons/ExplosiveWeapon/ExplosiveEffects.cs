@@ -27,8 +27,6 @@ public class ExplosiveEffects : MonoBehaviour
         {
             StartCoroutine(DestroyObject());
         }
-
-
     }
 
     IEnumerator DestroyObject()
