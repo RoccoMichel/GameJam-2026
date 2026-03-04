@@ -10,6 +10,8 @@ public class Enemy : Entity
     public float speed = 5;
     public float range = 2.5f;
 
+    private Animator animator;
+
     private float distanceFromPlayer
     {
         get
@@ -23,6 +25,7 @@ public class Enemy : Entity
     protected override void OnStart()
     {
         base.OnStart();
+        animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
 
@@ -30,7 +33,8 @@ public class Enemy : Entity
     }
     private void Update()
     {
-        agent.destination = player.transform.position;
+        if (agent.enabled) 
+            agent.destination = player.transform.position;
 
         attackTimer += Time.deltaTime;
         if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
@@ -38,7 +42,19 @@ public class Enemy : Entity
 
     public void Attack()
     {
+        if (Health <= 0) return;
+
         attackTimer = 0;
         player.Health -= damage;
+
+        animator.Play("Attack");
+    }
+
+    public override void Die()
+    {
+        agent.enabled = false;
+        gameObject.layer = 0;
+        animator.Play(Random.Range(0, 10) > 7 ? "Deadflip" : "Dead");
+        Destroy(gameObject, 0.7f);
     }
 }

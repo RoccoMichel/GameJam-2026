@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -23,11 +24,17 @@ public class PlayerMovement : MonoBehaviour
     private bool isWalking;
     public bool isRunning;
 
-    private float staminaDepletion = 0.0009f;
+    [SerializeField] private float staminaDepletion = 0.1f;
+
+    private InputAction moveAction;
+    private InputAction sprintAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        moveAction = InputSystem.actions.FindAction("Move");
+        sprintAction = InputSystem.actions.FindAction("Sprint");
+
         moveSpeed = walkSpeedDefault;
         myCC = GetComponent<CharacterController>();
         //mouseLook = GetComponent<MouseLook>();
@@ -50,19 +57,18 @@ public class PlayerMovement : MonoBehaviour
     // Hanterar imput
     void GetInput()
     {
-
         // Kollar om spelaren rör på sig eller står still, påverkar kameran rörelsen och momentum
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if (moveAction.IsPressed())
         {
-            if (Input.GetKey(KeyCode.LeftShift) && playerStamina.canRun == true)
+            if (sprintAction.IsPressed() && playerStamina.canRun == true)
             {
                 moveSpeed = runSpeedDefault;
                 isRunning = true;
-                playerStamina.staminaAmount -= staminaDepletion;
+                playerStamina.StaminaAmount -= staminaDepletion * Time.deltaTime;
 
             }
 
-            inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+            inputVector = new Vector3(moveAction.ReadValue<Vector2>().x, 0f, moveAction.ReadValue<Vector2>().y);
             inputVector.Normalize();
             inputVector = transform.TransformDirection(inputVector);
             isWalking = true;
@@ -91,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     void CheckShiftRelease()
     {
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (sprintAction.WasReleasedThisFrame())
         {
             moveSpeed = walkSpeedDefault;
             isRunning = false;

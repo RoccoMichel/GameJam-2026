@@ -2,6 +2,7 @@
 using Unity.VisualScripting;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerThrow : MonoBehaviour
 {
@@ -14,21 +15,23 @@ public class PlayerThrow : MonoBehaviour
     public int totalThrows;
     public float throwCooldown;
 
-    [Header("THrowing")]
+    [Header("Throwing")]
     public KeyCode throwKey = KeyCode.Mouse0;
     public float throwForce;
     public float throwUpwardForce;
+    private bool readyToThrow;
 
-    bool readyToThrow;
+    private InputAction attackAction;
 
     private void Start()
     {
+        attackAction = InputSystem.actions.FindAction("Attack");
         readyToThrow = true;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(throwKey) && readyToThrow)
+        if (attackAction.WasPressedThisFrame() && readyToThrow)
         {
             Throw();
         }

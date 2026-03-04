@@ -9,9 +9,12 @@ public class CanvasController : MonoBehaviour
     public static CanvasController instance;
     [SerializeField] private TMP_Text healthDisplay;
     [SerializeField] private TMP_Text waveDisplay;
+    [SerializeField] private Image crosshair;
+    [SerializeField] internal Slider staminaBar;
 
     private InputAction pauseAction;
     private GameObject optionMenu;
+    private GameObject tutorialMenu;
     private Player player;
 
     private void Awake()
@@ -33,8 +36,8 @@ public class CanvasController : MonoBehaviour
 
     private void Update()
     {
-        healthDisplay.text = player.Health + " HP";
-        if (pauseAction.WasPressedThisFrame() && optionMenu == null) 
+        healthDisplay.text = Mathf.Ceil(player.Health) + " HP";
+        if (pauseAction.WasPressedThisFrame() && optionMenu == null)
             optionMenu = InstantiateMenu("Options Menu");
     }
 
@@ -42,6 +45,11 @@ public class CanvasController : MonoBehaviour
     {
         waveDisplay.gameObject.GetComponent<Animator>().Play("Highlight");
         waveDisplay.text = $"WAVE {waveIndex + 1}";
+    }
+
+    public void UpdateCrosshair(string crosshairName)
+    {
+        crosshair.sprite = Resources.Load<Sprite>("UI/Crosshairs/" + crosshairName);
     }
 
     /// <summary>
@@ -52,6 +60,13 @@ public class CanvasController : MonoBehaviour
     public GameObject InstantiateMenu(string resourceName)
     {
         return Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);
+    }
+    public GameObject InstantiateTutorial(string resourceName)
+    {
+        if (tutorialMenu != null) Destroy(tutorialMenu);
+        tutorialMenu = Instantiate((GameObject)Resources.Load($"UI/Tutorials/{resourceName}"), transform);
+
+        return tutorialMenu;
     }
 
     private void Reset()

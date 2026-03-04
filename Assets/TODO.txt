@@ -1,4 +1,4 @@
-DEADLINE: --/--/----
+DEADLINE: 06/03/2026
 ______________________
-* This is a to-do list
-* Very advanced
+* build on school computer
+* Itch.io Page

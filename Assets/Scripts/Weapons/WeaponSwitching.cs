@@ -1,15 +1,22 @@
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.InputSystem;
 
 public class WeaponSwitching : MonoBehaviour
 {
     [SerializeField] private PlayerThrow[] weapons;
 
+    private InputAction weapon1Action;
+    private InputAction weapon2Action;
+    private InputAction weapon3Action;
+    private InputAction weapon4Action;
+
     private void Start()
     {
+        weapon1Action = InputSystem.actions.FindAction("weapon1");
+        weapon2Action = InputSystem.actions.FindAction("weapon2");
+        weapon3Action = InputSystem.actions.FindAction("weapon3");
+        weapon4Action = InputSystem.actions.FindAction("weapon4");
+
         SwitchToDefaultWeapon();
     }
     private void Update()
@@ -32,11 +39,11 @@ public class WeaponSwitching : MonoBehaviour
     private void CheckSwitchButton()
     {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (weapon1Action.WasPressedThisFrame())
         {
             WeaponPosition(0);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (weapon2Action.WasPressedThisFrame())
         {
             WeaponPosition(1);
         }

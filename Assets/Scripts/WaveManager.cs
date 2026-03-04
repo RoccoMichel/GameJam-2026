@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
@@ -16,8 +17,8 @@ public class WaveManager : MonoBehaviour
 
     [Header("Waves")]
     [SerializeField] private Wave[] waves;
-    [SerializeField] private List<GameObject> spawnPosList = new List<GameObject>();
-    private List<float> localCounters = new List<float>();
+    [SerializeField] private List<GameObject> spawnPosList = new();
+    private List<float> localCounters = new();
 
      
     private void Start()
@@ -80,6 +81,8 @@ public class WaveManager : MonoBehaviour
     }
     public IEnumerator startNext()
     {
+        waves[currentWaveIndex - 1].onComplete.Invoke();
+
         yield return new WaitForSeconds(waveTransitionTime);
         StartNextWave();
     }
@@ -126,6 +129,7 @@ public struct Wave
 {
     public string name;
     public List<WaveSegment> segments;
+    public UnityEvent onComplete;
 }
 [System.Serializable]
 public struct WaveSegment

@@ -1,14 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
+    public bool tutorial;
     public bool debug;
 
     [Header("References")]
+    private AudioSource audioSource;
     private InputAction debugAction;
 
     private void Awake()
@@ -18,7 +22,20 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         debugAction = InputSystem.actions.FindAction("Debug");
+
+        if (tutorial) StartCoroutine(StartTutorial());
+    }
+
+    /// <param name="fileName">From: Resources/Sounds/...</param>
+    public void SFX(string fileName)
+    {
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Sounds/" + fileName));
+    }
+    public void SFX(AudioClip sound)
+    {
+        audioSource.PlayOneShot(sound);
     }
 
     private void Update()
@@ -53,5 +70,38 @@ public class GameController : MonoBehaviour
     public void GameWon()
     {
         SceneManager.LoadScene("WinScene");
+    }
+
+    private IEnumerator StartTutorial()
+    {
+        GameObject latest = null;
+        int index = 0; // ORDER: Look, Walk, Shoot, Sprint!
+
+        while (index < 4)
+        {
+            if (latest == null)
+            {
+                switch (index)
+                {
+                    case 0:
+                        latest = CanvasController.instance.InstantiateTutorial("Look");
+                        break;
+                    case 1:
+                        latest = CanvasController.instance.InstantiateTutorial("Walk");
+                        break;
+                    case 2:
+                        latest = CanvasController.instance.InstantiateTutorial("Shoot");
+                        break;
+                    case 3:
+                        latest = CanvasController.instance.InstantiateTutorial("Sprint");
+                        break;
+                }
+
+                index++;
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+        yield break;
     }
 }
