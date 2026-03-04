@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class WeaponSwitching : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class WeaponSwitching : MonoBehaviour
     {
         SwitchToDefaultWeapon();
     }
+    private void Update()
+    {
+        CheckSwitchButton();
+    }
 
     private void SwitchToDefaultWeapon()
     {
@@ -18,6 +24,37 @@ public class WeaponSwitching : MonoBehaviour
         for (int i = 1; i < weapons.Length; i++)
         {
             weapons[i].gameObject.SetActive(false);
+        }
+    }
+
+    private void CheckSwitchButton()
+    {
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            WeaponPosition(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            WeaponPosition(1);
+        }
+    }
+
+    // if i equals to Alpha Number - 1, sets active the weapon and disables the others
+    private void WeaponPosition(int weaponPoisiton)
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (i == weaponPoisiton)
+            {
+                weapons[weaponPoisiton].gameObject.SetActive(true);
+            }
+            else
+            {
+                weapons[i].gameObject.SetActive(false);
+            }
+
         }
     }
 }

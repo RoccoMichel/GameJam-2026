@@ -10,7 +10,7 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         lookAction = InputSystem.actions.FindAction("Look");
-        mouseSen = PlayerPrefs.GetFloat("sensitivity", 10);
+        mouseSen = PlayerPrefs.GetFloat("sensitivity", 1);
         Cursor.lockState = CursorLockMode.Locked; //Låser vår mus till skärmen, och så den inte syns. 
     }
     void Update()
