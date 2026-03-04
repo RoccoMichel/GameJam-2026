@@ -3,15 +3,19 @@ using UnityEngine;
 
 public class PlayerScreenStatus : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EffectZone")
         {
-            Debug.Log("wsda");
-            ScreenEffects.Instance.SelectPanel(0);
-            ScreenEffects.Instance.startFadingIn();
+            ScreenEffects.Instance.panels[0].SetActive(true);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        ScreenEffects.Instance.panels[0].SetActive(false);
+    }
+
 
 
 }

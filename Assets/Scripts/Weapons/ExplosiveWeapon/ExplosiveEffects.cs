@@ -33,4 +33,9 @@ public class ExplosiveEffects : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
+
+    private void OnDestroy()
+    {
+        ScreenEffects.Instance.panels[0].SetActive(false);
+    }
 }

@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &166505080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42138356, g: 0.20212705, b: 0, a: 0}
+  m_Color: {r: 0.42138356, g: 0.20212705, b: 0, a: 0.7647059}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -753,11 +753,6 @@ MonoBehaviour:
   - {fileID: 166505079}
   - {fileID: 166505079}
   selectPanelPosiiton: 0
-  fadeInSpeed: 0.1
-  fadeOutSpeed: 0.01
-  paneOpacityFadeIn: 1
-  panelOpacityFadeOut: 1
-  canPlayAgain: 1
 --- !u!114 &7927842337934734379
 MonoBehaviour:
   m_ObjectHideFlags: 0
