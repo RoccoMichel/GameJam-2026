@@ -17,6 +17,7 @@ public class WeaponSwitching : MonoBehaviour
         CheckSwitchButton();
     }
 
+    // used when it switches to a default weapon
     private void SwitchToDefaultWeapon()
     {
         weapons[0].gameObject.SetActive(true);
@@ -27,9 +28,9 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
+    // checks if player has pressed button to switch weapons, used with WeaponPosition
     private void CheckSwitchButton()
     {
-
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

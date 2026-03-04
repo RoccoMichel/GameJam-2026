@@ -33,16 +33,16 @@ public class ProjectileAddon : MonoBehaviour
         }
 
         // check if you hit an enemy
-        if (collision.gameObject.GetComponent<Enemy>() != null)
+        if (LayerMask.GetMask("Entity") != 3)
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             enemy.Damage(damage);
 
-            Destroy(gameObject);
-        }
-        else if (LayerMask.GetMask("Entity") != 3)
-        {
             Destroy(gameObject);
         }
 
