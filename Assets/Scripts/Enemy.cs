@@ -35,6 +35,7 @@ public class Enemy : Entity
     {
         if (agent.enabled) 
             agent.destination = player.transform.position;
+        animator.SetFloat("speed", agent.velocity.magnitude);
 
         attackTimer += Time.deltaTime;
         if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
