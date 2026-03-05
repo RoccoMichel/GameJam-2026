@@ -4,10 +4,13 @@ using UnityEngine;
 public class Player : Entity
 {
     [SerializeField] public GameObject damagePanel;
-
+ 
     public override void Die()
     {
+        if(immortal)
         print("Player died");
+        else
+        GameController.Instance.GameOver();
         //Felix hat einen kleinen Schwanz.
     }
 

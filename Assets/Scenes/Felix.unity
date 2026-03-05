@@ -499,7 +499,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.25922012, g: 1, b: 0, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -2176,6 +2176,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4741949792175401731, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      propertyPath: m_StopNaN
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741949792175401731, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      propertyPath: m_Dithering
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741949792175401731, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7405319890257007672, guid: 762082362715fb84392d39be0915a38b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -2219,6 +2231,10 @@ PrefabInstance:
     - target: {fileID: 7466623006971901038, guid: 762082362715fb84392d39be0915a38b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685782601345514873, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5763,6 +5779,9 @@ MonoBehaviour:
     - tStartEnd: {x: 0, y: 100}
       spawnFrequency: 1
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
   spawnPosList:
   - {fileID: 0}
   - {fileID: 0}
@@ -5800,7 +5819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1807641568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7380,23 +7399,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3076654135846008035, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3076654135846008035, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3076654135846008035, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4086732989358089415, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4086732989358089415, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6756392820641853972, guid: a68d5532c8d58a043a91c041231f2e1d, type: 3}
       propertyPath: m_Pivot.x

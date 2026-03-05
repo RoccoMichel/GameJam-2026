@@ -61,6 +61,11 @@ public class CanvasController : MonoBehaviour
     {
         return Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);
     }
+
+    public void OptionMenuButton()
+    {
+        optionMenu = InstantiateMenu("Options Menu");
+    }
     public GameObject InstantiateTutorial(string resourceName)
     {
         if (tutorialMenu != null) Destroy(tutorialMenu);

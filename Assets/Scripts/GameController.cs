@@ -81,7 +81,7 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        //Load Gameover Scene
+        SceneManager.LoadScene("GameOverScene");
     }
 
     public void GameWon()

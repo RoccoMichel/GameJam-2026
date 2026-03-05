@@ -25,6 +25,10 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void OptionMenuButton()
+    {
+        Instantiate((GameObject)Resources.Load($"UI/{"Options Menu"}"), transform);
+    }
     public void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
