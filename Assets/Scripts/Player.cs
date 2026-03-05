@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
+
     public override void Die()
     {
         print("Player died");
@@ -12,5 +13,11 @@ public class Player : Entity
     {
         gameObject.tag = "Player";
         identity = "Player";
+    }
+
+    public override void Damage(float amount)
+    {
+        base.Damage(amount);
+
     }
 }
