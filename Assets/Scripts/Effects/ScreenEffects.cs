@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class ScreenEffects : MonoBehaviour
 {
     [Header("Panels and positions")]
-    [SerializeField] public GameObject[] panels;
-    [SerializeField] private int selectPanelPosiiton = 0;
+    [SerializeField] public GameObject panel;
 
 
 

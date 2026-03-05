@@ -526,6 +526,7 @@ MonoBehaviour:
   identity: Player
   maxHealth: 100
   immortal: 0
+  damagePanel: {fileID: 0}
 --- !u!114 &415174814343828827
 MonoBehaviour:
   m_ObjectHideFlags: 0
