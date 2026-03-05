@@ -10,6 +10,7 @@ public class OptionMenu : MonoBehaviour
 
     private void Start()
     {
+        GameController.Instance.FreezeGame();
         Cursor.lockState = CursorLockMode.Confined;
         cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
         slider.value = PlayerPrefs.GetFloat("sensitivity", 1);        
@@ -30,6 +31,7 @@ public class OptionMenu : MonoBehaviour
 
     private void OnDestroy()
     {
+        GameController.Instance.UnfreezeGame();
         Cursor.lockState = CursorLockMode.Locked;
     }
 }

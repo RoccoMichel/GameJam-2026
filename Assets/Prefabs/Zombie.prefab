@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identity: Zombie
-  maxHealth: 10
+  maxHealth: 30
   immortal: 0
   damage: 10
   attackSpeedSeconds: 1.3

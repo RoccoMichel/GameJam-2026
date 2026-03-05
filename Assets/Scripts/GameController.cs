@@ -89,6 +89,14 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("WinScene");
     }
 
+    public void FreezeGame()
+    {
+        Time.timeScale = 0f;
+    }
+    public void UnfreezeGame()
+    {
+        Time.timeScale = 1f;
+    }
     private IEnumerator StartTutorial()
     {
         GameObject latest = null;
