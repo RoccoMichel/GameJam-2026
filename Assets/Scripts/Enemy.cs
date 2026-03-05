@@ -45,7 +45,7 @@ public class Enemy : Entity
         if (Health <= 0) return;
 
         attackTimer = 0;
-        player.Health -= damage;
+        player.Damage(damage);
 
         animator.Play("Attack");
     }

@@ -28,7 +28,6 @@ public class Entity : MonoBehaviour
     public virtual void Damage(float amount)
     {
         Health -= amount;
-        Debug.Log("Entity took" + amount + " damage");
     }
 
     public virtual void Heal(float amount)

@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : Entity
 {
+    [SerializeField] public GameObject damagePanel;
 
     public override void Die()
     {
@@ -18,6 +20,14 @@ public class Player : Entity
     public override void Damage(float amount)
     {
         base.Damage(amount);
+        StartCoroutine(FlashRed());
 
+    }
+
+    public IEnumerator FlashRed()
+    {
+        damagePanel.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        damagePanel.SetActive(false);
     }
 }
