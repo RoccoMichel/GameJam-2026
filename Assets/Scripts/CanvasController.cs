@@ -68,6 +68,15 @@ public class CanvasController : MonoBehaviour
 
         return tutorialMenu;
     }
+    public void InstantiateMenuVoid(string resourceName)
+    {
+        Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);
+    }
+    public void InstantiateTutorialVoid(string resourceName)
+    {
+        if (tutorialMenu != null) Destroy(tutorialMenu);
+        tutorialMenu = Instantiate((GameObject)Resources.Load($"UI/Tutorials/{resourceName}"), transform);
+    }
 
     private void Reset()
     {

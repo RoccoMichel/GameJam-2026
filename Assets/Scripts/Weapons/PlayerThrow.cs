@@ -1,6 +1,3 @@
-
-using Unity.VisualScripting;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,19 +6,21 @@ public class PlayerThrow : MonoBehaviour
     [Header("References")]
     public Transform cam;
     public Transform attackPoint;
-    public GameObject objecToThrow;
+    public GameObject objectToThrow;
+    [SerializeField] private Sprite crosshair;
 
     [Header("Settings")]
+    public bool infiniteThrows;
     public int totalThrows;
     public float throwCooldown;
 
     [Header("Throwing")]
-    public KeyCode throwKey = KeyCode.Mouse0;
     public float throwForce;
     public float throwUpwardForce;
     private bool readyToThrow;
 
     private InputAction attackAction;
+    private Animator animator;
 
     private void Start()
     {
@@ -39,10 +38,13 @@ public class PlayerThrow : MonoBehaviour
 
     private void Throw()
     {
+        if (totalThrows <= 0 && !infiniteThrows) return; // out of ammo
+
+        //animator.Play("Attack");
         readyToThrow = false;
 
         // Instantiate objects to throw
-        GameObject projectile = Instantiate(objecToThrow, attackPoint.position, cam.rotation);
+        GameObject projectile = Instantiate(objectToThrow, attackPoint.position, cam.rotation);
 
         // Get rigid body component
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
@@ -51,8 +53,7 @@ public class PlayerThrow : MonoBehaviour
         Vector3 forceDirection = cam.transform.forward;
 
         RaycastHit hit;
-
-        if (Physics.Raycast(cam.position, cam.forward, out hit, 500f))
+        if (Physics.Raycast(attackPoint.position, cam.forward, out hit, 500f))
         {
             forceDirection = (hit.point - attackPoint.position).normalized;
         }
@@ -62,7 +63,7 @@ public class PlayerThrow : MonoBehaviour
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
-        totalThrows--;
+        if (!infiniteThrows) totalThrows--;
 
         // implement throwCooldown
         Invoke(nameof(ResetThrow), throwCooldown);
@@ -71,5 +72,10 @@ public class PlayerThrow : MonoBehaviour
     private void ResetThrow()
     {
         readyToThrow = true;
+    }
+
+    private void OnEnable()
+    {
+        if (crosshair != null) CanvasController.instance.UpdateCrosshair(crosshair.name);
     }
 }

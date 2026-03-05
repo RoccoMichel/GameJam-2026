@@ -113,14 +113,14 @@ public class WaveManager : MonoBehaviour
 
     private Transform GetSpawnPos()
     {
-        GameObject gameObject = spawnPosList[Random.Range(0, spawnPosList.Count)];
-        if (gameObject.activeSelf == false)
+        GameObject newSpawn = spawnPosList[Random.Range(0, spawnPosList.Count)];
+        if (newSpawn.activeSelf == false)
         {
-            while(gameObject.activeSelf == false)
-            gameObject = spawnPosList[Random.Range(0, spawnPosList.Count)];
+            while(newSpawn.activeSelf == false)
+            newSpawn = spawnPosList[Random.Range(0, spawnPosList.Count)];
         }
 
-        return gameObject.transform;
+        return newSpawn.transform;
     }
 }
 

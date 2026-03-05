@@ -4,18 +4,14 @@ using UnityEngine.InputSystem;
 public class WeaponSwitching : MonoBehaviour
 {
     [SerializeField] private PlayerThrow[] weapons;
+    public bool[] unlocks;
 
-    private InputAction weapon1Action;
-    private InputAction weapon2Action;
-    private InputAction weapon3Action;
-    private InputAction weapon4Action;
+    private InputAction[] switchAction;
 
     private void Start()
     {
-        weapon1Action = InputSystem.actions.FindAction("weapon1");
-        weapon2Action = InputSystem.actions.FindAction("weapon2");
-        weapon3Action = InputSystem.actions.FindAction("weapon3");
-        weapon4Action = InputSystem.actions.FindAction("weapon4");
+        switchAction = new InputAction[weapons.Length];
+        for (int i = 0; i < weapons.Length; i++) switchAction[i] = InputSystem.actions.FindAction($"weapon{i + 1}");
 
         SwitchToDefaultWeapon();
     }
@@ -38,25 +34,19 @@ public class WeaponSwitching : MonoBehaviour
     // checks if player has pressed button to switch weapons, used with WeaponPosition
     private void CheckSwitchButton()
     {
-
-        if (weapon1Action.WasPressedThisFrame())
-        {
-            WeaponPosition(0);
-        }
-        else if (weapon2Action.WasPressedThisFrame())
-        {
-            WeaponPosition(1);
-        }
+        for (int i = 0; i < switchAction.Length; i++)
+            if (switchAction[i].WasCompletedThisFrame()) 
+                WeaponPosition(i);
     }
 
     // if i equals to Alpha Number - 1, sets active the weapon and disables the others
-    private void WeaponPosition(int weaponPoisiton)
+    private void WeaponPosition(int weaponPosition)
     {
         for (int i = 0; i < weapons.Length; i++)
         {
-            if (i == weaponPoisiton)
+            if (i == weaponPosition)
             {
-                weapons[weaponPoisiton].gameObject.SetActive(true);
+                weapons[weaponPosition].gameObject.SetActive(true);
             }
             else
             {

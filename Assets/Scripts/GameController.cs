@@ -38,6 +38,23 @@ public class GameController : MonoBehaviour
         audioSource.PlayOneShot(sound);
     }
 
+    /// <summary>
+    /// Unlocks the weapon at the specified index for the player
+    /// </summary>
+    /// <param name="index">Starts at 0</param>
+    public void UnlockWeapon(int index)
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponSwitching>().unlocks[index] = true;
+    }
+    /// <summary>
+    /// Locks the weapon at the specified index for the player
+    /// </summary>
+    /// <param name="index">Starts at 0</param>
+    public void LockWeapon(int index)
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponSwitching>().unlocks[index] = false;
+    }
+
     private void Update()
     {
         if (debugAction.WasPressedThisFrame()) debug = !debug;

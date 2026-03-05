@@ -37,8 +37,8 @@ public class ProjectileAddon : MonoBehaviour
         if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
             enemy.Damage(damage);
+            Instantiate(Resources.Load<GameObject>("Effects/Blood"), transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }
