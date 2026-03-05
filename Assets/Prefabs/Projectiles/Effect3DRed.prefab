@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: -6807000837237860591}
   - component: {fileID: 3192110648587868072}
   m_Layer: 0
-  m_Name: EffectExplosive
-  m_TagString: EffectZone
+  m_Name: Effect3DRed
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
+  - {fileID: 2100000, guid: e8a93acd65b2523489c52e817b71dcf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96427978e7e67ec4ea916685b84fcbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastingTime: 2
+  lastingTime: 0.1
 --- !u!65 &3192110648587868072
 BoxCollider:
   m_ObjectHideFlags: 0

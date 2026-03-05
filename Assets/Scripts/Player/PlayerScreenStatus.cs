@@ -7,13 +7,13 @@ public class PlayerScreenStatus : MonoBehaviour
     {
         if (other.tag == "EffectZone")
         {
-            ScreenEffects.Instance.panels[0].SetActive(true);
+            ScreenEffects.Instance.panel.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ScreenEffects.Instance.panels[0].SetActive(false);
+        ScreenEffects.Instance.panel.SetActive(false);
     }
 
 

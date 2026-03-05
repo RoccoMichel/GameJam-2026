@@ -5,6 +5,7 @@ public class ExplosiveEffects : MonoBehaviour
 {
     private int damage;
     private ProjectileAddonExplosive connectedProjectile;
+    [SerializeField] float lastingTime;
     private void Start()
     {
         connectedProjectile = FindAnyObjectByType<ProjectileAddonExplosive>();
@@ -30,12 +31,12 @@ public class ExplosiveEffects : MonoBehaviour
     IEnumerator DestroyObject()
     {
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(lastingTime);
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        ScreenEffects.Instance.panels[0].SetActive(false);
+        ScreenEffects.Instance.panel.SetActive(false);
     }
 }
