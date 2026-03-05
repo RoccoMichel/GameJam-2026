@@ -12,6 +12,7 @@ public class PlayerThrow : MonoBehaviour
     [Header("Settings")]
     public bool infiniteThrows;
     public int totalThrows;
+    public int maxThrows = 100;
     public float throwCooldown;
 
     [Header("Throwing")]
@@ -25,6 +26,7 @@ public class PlayerThrow : MonoBehaviour
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
+        Refill();
         readyToThrow = true;
     }
 
@@ -73,9 +75,14 @@ public class PlayerThrow : MonoBehaviour
     {
         readyToThrow = true;
     }
+    public void Refill()
+    {
+        totalThrows = maxThrows;
+    }
 
     private void OnEnable()
     {
         if (crosshair != null) CanvasController.instance.UpdateCrosshair(crosshair.name);
+        CanvasController.instance.weapon = this;
     }
 }

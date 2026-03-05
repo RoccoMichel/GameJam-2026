@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    [SerializeField] private PlayerThrow[] weapons;
+    [SerializeField] internal PlayerThrow[] weapons;
     public bool[] unlocks;
 
     private InputAction[] switchAction;

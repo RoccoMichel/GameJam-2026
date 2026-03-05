@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class CanvasController : MonoBehaviour
 {
     public static CanvasController instance;
-    [SerializeField] private TMP_Text healthDisplay;
+    [SerializeField] private TMP_Text infoDisplay;
     [SerializeField] private TMP_Text waveDisplay;
     [SerializeField] private Image crosshair;
     [SerializeField] internal Slider staminaBar;
 
+    internal PlayerThrow weapon;
     private InputAction pauseAction;
     private GameObject optionMenu;
     private GameObject tutorialMenu;
@@ -36,7 +37,9 @@ public class CanvasController : MonoBehaviour
 
     private void Update()
     {
-        healthDisplay.text = Mathf.Ceil(player.Health) + " HP";
+        infoDisplay.text = Mathf.Ceil(player.Health) + " HP\n";
+        if (weapon != null) infoDisplay.text += weapon.totalThrows;
+
         if (pauseAction.WasPressedThisFrame() && optionMenu == null)
             optionMenu = InstantiateMenu("Options Menu");
     }

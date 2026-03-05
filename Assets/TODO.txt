@@ -1,4 +1,7 @@
 DEADLINE: 06/03/2026
 ______________________
-* build on school computer
-* Itch.io Page
+* Level
+* Waves
+* Weapons
+* Weapon Refill Station
+* Hand Animations
