@@ -423,11 +423,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
---- !u!1 &1164283878 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3746473037582145129, guid: bfc07f3de562a4d4895c12db86de6218, type: 3}
-  m_PrefabInstance: {fileID: 1471463263840355671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1545684125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -848,11 +843,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfc07f3de562a4d4895c12db86de6218, type: 3}
---- !u!1 &1471463263840355674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4668224943312670621, guid: bfc07f3de562a4d4895c12db86de6218, type: 3}
-  m_PrefabInstance: {fileID: 1471463263840355671}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7927842337934734368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -861,18 +851,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3541467810746175924, guid: 762082362715fb84392d39be0915a38b, type: 3}
-      propertyPath: damagePanel
-      value: 
-      objectReference: {fileID: 1164283878}
-    - target: {fileID: 6314862112091749861, guid: 762082362715fb84392d39be0915a38b, type: 3}
-      propertyPath: throwForce
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 7272091199585310343, guid: 762082362715fb84392d39be0915a38b, type: 3}
-      propertyPath: panel
-      value: 
-      objectReference: {fileID: 1471463263840355674}
     - target: {fileID: 7405319890257007672, guid: 762082362715fb84392d39be0915a38b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
