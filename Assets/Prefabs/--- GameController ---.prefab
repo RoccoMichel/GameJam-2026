@@ -136,7 +136,7 @@ MonoBehaviour:
   - name: 4
     segments:
     - tStartEnd: {x: 0, y: 15}
-      spawnFrequency: 1.5
+      spawnFrequency: 1.4
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     - tStartEnd: {x: 15, y: 100}
       spawnFrequency: 0.3
@@ -159,10 +159,10 @@ MonoBehaviour:
   - name: 5
     segments:
     - tStartEnd: {x: 0, y: 7}
-      spawnFrequency: 3
+      spawnFrequency: 2.9
       prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
     - tStartEnd: {x: 15, y: 100}
-      spawnFrequency: 0.7
+      spawnFrequency: 0.6
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -194,13 +194,13 @@ MonoBehaviour:
   - name: 6
     segments:
     - tStartEnd: {x: 0, y: 4}
-      spawnFrequency: 1
+      spawnFrequency: 0.9
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     - tStartEnd: {x: 5, y: 51}
-      spawnFrequency: 0.5
+      spawnFrequency: 0.4
       prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
     - tStartEnd: {x: 51, y: 100}
-      spawnFrequency: 0.7
+      spawnFrequency: 0.6
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -208,13 +208,13 @@ MonoBehaviour:
   - name: 7
     segments:
     - tStartEnd: {x: 0, y: 14}
-      spawnFrequency: 2
+      spawnFrequency: 1.9
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     - tStartEnd: {x: 15, y: 51}
-      spawnFrequency: 0.8
+      spawnFrequency: 0.7
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     - tStartEnd: {x: 51, y: 100}
-      spawnFrequency: 0.7
+      spawnFrequency: 0.6
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -246,13 +246,13 @@ MonoBehaviour:
   - name: 8
     segments:
     - tStartEnd: {x: 0, y: 10}
-      spawnFrequency: 2
+      spawnFrequency: 1.9
       prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
     - tStartEnd: {x: 15, y: 51}
-      spawnFrequency: 0.8
+      spawnFrequency: 0.7
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     - tStartEnd: {x: 51, y: 100}
-      spawnFrequency: 1
+      spawnFrequency: 0.9
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -271,14 +271,14 @@ MonoBehaviour:
           m_CallState: 2
   - name: 9
     segments:
-    - tStartEnd: {x: 0, y: 20}
-      spawnFrequency: 3
+    - tStartEnd: {x: 0, y: 10}
+      spawnFrequency: 2.8
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     - tStartEnd: {x: 15, y: 51}
-      spawnFrequency: 1
+      spawnFrequency: 0.8
       prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
     - tStartEnd: {x: 51, y: 100}
-      spawnFrequency: 0.7
+      spawnFrequency: 0.5
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -286,13 +286,13 @@ MonoBehaviour:
   - name: 10
     segments:
     - tStartEnd: {x: 0, y: 23}
-      spawnFrequency: 1
+      spawnFrequency: 0.9
       prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
     - tStartEnd: {x: 24, y: 51}
-      spawnFrequency: 1
+      spawnFrequency: 0.9
       prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
     - tStartEnd: {x: 52, y: 100}
-      spawnFrequency: 1
+      spawnFrequency: 0.9
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     onComplete:
       m_PersistentCalls:
@@ -322,6 +322,9 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   spawnPosList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
