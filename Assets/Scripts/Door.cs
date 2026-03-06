@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -6,7 +7,7 @@ public class Door : MonoBehaviour
     public States startState;
     public GameObject openState;
     public GameObject closeState;
-
+    public List<GameObject> spawnPosList = new List<GameObject>();
     private void Start()
     {
         switch (startState)
@@ -25,6 +26,11 @@ public class Door : MonoBehaviour
     {
         openState.SetActive(true);
         closeState.SetActive(false);
+        for(int i = 0; i < spawnPosList.Count; i++)
+        {
+            GameObject spawnPos = spawnPosList[i];
+            spawnPos.SetActive(true);
+        }
         GameController.Instance.SFX("door-open");
         CanvasController.instance.InstantiateTutorial("Door Alert");
     }
@@ -35,4 +41,6 @@ public class Door : MonoBehaviour
         closeState.SetActive(true);
         openState.SetActive(false);
     }
+
+
 }

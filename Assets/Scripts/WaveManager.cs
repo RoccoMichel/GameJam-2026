@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
@@ -43,7 +44,7 @@ public class WaveManager : MonoBehaviour
 
     private void StartWave(int waveIndex)
     {
-        CanvasController.instance.UpdateWave(currentWaveIndex);
+       
         
         localCounters.Clear();
         foreach (WaveSegment segment in waves[waveIndex].segments)
@@ -65,14 +66,14 @@ public class WaveManager : MonoBehaviour
 
         currentWaveIndex++;
 
-        if (PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().buildIndex}Highscore", 0) < currentWaveIndex + 1)
-            PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().buildIndex}Highscore", currentWaveIndex + 1);
+        if (currentWaveIndex >= waves.Length) return;
 
         else StartCoroutine(startNext());
     }
     public IEnumerator startNext()
     {
-        waves[currentWaveIndex - 1].onComplete.Invoke();
+        waves[currentWaveIndex -1].onComplete.Invoke();
+        CanvasController.instance.UpdateWave(currentWaveIndex);
 
         yield return new WaitForSeconds(waveTransitionTime);
         StartNextWave();
