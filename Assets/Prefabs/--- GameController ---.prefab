@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab7468815d4bda458a2f8e24a28d839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveDuration: 5
+  waveDuration: 60
   currentWaveIndex: 0
   waveTransitionTime: 5
   waves:
@@ -207,21 +207,7 @@ MonoBehaviour:
         m_Calls: []
   - name: 7
     segments:
-    - tStartEnd: {x: 0, y: 10}
-      spawnFrequency: 2
-      prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
-    - tStartEnd: {x: 15, y: 51}
-      spawnFrequency: 0.8
-      prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
-    - tStartEnd: {x: 51, y: 100}
-      spawnFrequency: 0.7
-      prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
-    onComplete:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: 8
-    segments:
-    - tStartEnd: {x: 0, y: 10}
+    - tStartEnd: {x: 0, y: 14}
       spawnFrequency: 2
       prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
     - tStartEnd: {x: 15, y: 51}
@@ -233,9 +219,99 @@ MonoBehaviour:
     onComplete:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 451189052054931199}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: UnlockWeapon
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+          m_MethodName: InstantiateTutorialVoid
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Weapon3
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: 8
+    segments:
+    - tStartEnd: {x: 0, y: 10}
+      spawnFrequency: 2
+      prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
+    - tStartEnd: {x: 15, y: 51}
+      spawnFrequency: 0.8
+      prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
+    - tStartEnd: {x: 51, y: 100}
+      spawnFrequency: 1
+      prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
         - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: Door, Assembly-CSharp
           m_MethodName: Open
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: 9
+    segments:
+    - tStartEnd: {x: 0, y: 20}
+      spawnFrequency: 3
+      prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
+    - tStartEnd: {x: 15, y: 51}
+      spawnFrequency: 1
+      prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
+    - tStartEnd: {x: 51, y: 100}
+      spawnFrequency: 0.7
+      prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: 10
+    segments:
+    - tStartEnd: {x: 0, y: 23}
+      spawnFrequency: 1
+      prefab: {fileID: 6221457167098877723, guid: 0cb088aaf8b906d4fb763d25d69b6e7e, type: 3}
+    - tStartEnd: {x: 24, y: 51}
+      spawnFrequency: 1
+      prefab: {fileID: 6221457167098877723, guid: ca89b2186006ff34086ce7155d3528d4, type: 3}
+    - tStartEnd: {x: 52, y: 100}
+      spawnFrequency: 1
+      prefab: {fileID: 6221457167098877723, guid: 0b31f16429a17174e96b19150abbfa4d, type: 3}
+    onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Door, Assembly-CSharp
+          m_MethodName: Open
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+          m_MethodName: EscapeText
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

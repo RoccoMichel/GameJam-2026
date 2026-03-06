@@ -64,6 +64,7 @@ public class WaveManager : MonoBehaviour
     {
         isTimerOn = false;
 
+        waves[currentWaveIndex].onComplete.Invoke();
         currentWaveIndex++;
 
         if (currentWaveIndex >= waves.Length) return;
@@ -72,7 +73,7 @@ public class WaveManager : MonoBehaviour
     }
     public IEnumerator startNext()
     {
-        waves[currentWaveIndex -1].onComplete.Invoke();
+      
         CanvasController.instance.UpdateWave(currentWaveIndex);
 
         yield return new WaitForSeconds(waveTransitionTime);
