@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour
@@ -10,9 +11,9 @@ public class OptionMenu : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.FreezeGame();
+        try { GameController.Instance.FreezeGame(); } catch { }
         Cursor.lockState = CursorLockMode.Confined;
-        cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
+        try { cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>(); } catch { }
         slider.value = PlayerPrefs.GetFloat("sensitivity", 1);        
         sensitivityDisplay.text = $"SENSITIVITY: {Mathf.Round(slider.value * 100) / 100}";
     }
@@ -21,17 +22,21 @@ public class OptionMenu : MonoBehaviour
     {
         float newSensitivity = slider.value;
         PlayerPrefs.SetFloat("sensitivity", newSensitivity);
-        if (cameraController == null) 
-            cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
+        try
+        {
+            if (cameraController == null)
+                cameraController = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCamera>();
 
+            cameraController.mouseSen = newSensitivity;
+        }
+        catch { }
 
-        cameraController.mouseSen = newSensitivity;
         sensitivityDisplay.text = $"SENSITIVITY: {Mathf.Round(newSensitivity * 100) / 100}";
     }
 
     private void OnDestroy()
     {
-        GameController.Instance.UnfreezeGame();
-        Cursor.lockState = CursorLockMode.Locked;
+        try { GameController.Instance.UnfreezeGame(); } catch { }
+        if (SceneManager.GetActiveScene().buildIndex != 0) Cursor.lockState = CursorLockMode.Locked; // don't lock on main menu
     }
 }

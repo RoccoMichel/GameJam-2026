@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0) Cursor.lockState = CursorLockMode.Confined;
         try { eventSystem = FindFirstObjectByType<EventSystem>().GetComponent<EventSystem>(); }
         catch
         {
@@ -22,6 +23,7 @@ public class Menu : MonoBehaviour
 
     public void LoadSceneByString(string sceneName)
     {
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -31,11 +33,13 @@ public class Menu : MonoBehaviour
     }
     public void LoadSceneByIndex(int index)
     {
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene(index);
     }
 
     public void LoadSceneThis()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void PlaySound(AudioClip clip)

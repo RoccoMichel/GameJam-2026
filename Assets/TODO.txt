@@ -1,5 +1,4 @@
 DEADLINE: 06/03/2026
 ______________________
-* Level
 * Hand Animations (no time)
 * Queue System on GameController for Zombie Attacks and Sounds (no time)
