@@ -4,6 +4,10 @@ public class ProjectileAddon3DExplosive : ProjectileAddonExplosive
 {
     public GameObject explosiveEffect2;
 
+    public override void Awake()
+    {
+        GameController.Instance.SFX("sound-weapon-3DLand");
+    }
     public override void ProjectileLogic(Collision collision)
     {
         // Make sure only to stick to the first target you hit

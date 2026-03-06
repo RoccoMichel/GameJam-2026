@@ -39938,6 +39938,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3022778886030484237, guid: 8c2fd427464909548824925a6483a8be, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 3022778886030484237, guid: 8c2fd427464909548824925a6483a8be, type: 3}
       propertyPath: m_Name
       value: Game Win Trigger
       objectReference: {fileID: 0}

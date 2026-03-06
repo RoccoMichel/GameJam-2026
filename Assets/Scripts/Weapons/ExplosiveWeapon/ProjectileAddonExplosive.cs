@@ -5,6 +5,10 @@ using UnityEngine.UI;
 public class ProjectileAddonExplosive : ProjectileAddon
 {
     public GameObject explosiveEffect;
+    public virtual void Awake()
+    {
+        GameController.Instance.SFX("weapon-shoot-cola");
+    }
     public override void ProjectileLogic(Collision collision)
     {
         // Make sure only to stick to the first target you hit
@@ -28,6 +32,7 @@ public class ProjectileAddonExplosive : ProjectileAddon
 
         // spawns explosive effects
         Instantiate(explosiveEffect, transform.position, Quaternion.identity);
+        GameController.Instance.SFX("sound-cola-floor");
         Destroy(gameObject);
     }
 }

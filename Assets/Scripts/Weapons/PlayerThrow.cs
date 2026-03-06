@@ -48,6 +48,8 @@ public class PlayerThrow : MonoBehaviour
         if (animationName != string.Empty) animator.Play(animationName, 1);
         readyToThrow = false;
 
+        GameController.Instance.SFX("weapon-shoot-popcorn");
+
         // Instantiate objects to throw
         GameObject projectile = Instantiate(objectToThrow, attackPoint.position, cam.rotation);
 
