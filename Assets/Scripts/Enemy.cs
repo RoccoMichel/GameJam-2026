@@ -12,6 +12,8 @@ public class Enemy : Entity
 
     private Animator animator;
 
+    private int zombieRandomizer;
+
     private float distanceFromPlayer
     {
         get
@@ -30,6 +32,8 @@ public class Enemy : Entity
         agent.speed = speed;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        zombieRandomizer = Random.Range(0, 20);
     }
     private void Update()
     {
@@ -41,6 +45,26 @@ public class Enemy : Entity
 
         attackTimer += Time.deltaTime;
         if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
+
+        if (zombieRandomizer == Random.Range(0, 20))
+        {
+            zombieRandomizer = Random.Range(0, 2);
+            switch (zombieRandomizer)
+            {
+                case 0:
+                    GameController.Instance.SFX("zombie-moan-1");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+                case 1:
+                    GameController.Instance.SFX("zombie-moan-2");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+                case 2:
+                    GameController.Instance.SFX("zombie-moan-3");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+            }
+        }
     }
 
     public void Attack()
