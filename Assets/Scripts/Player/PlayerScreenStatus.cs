@@ -1,21 +1,17 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScreenStatus : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "EffectZone")
+        if (other.CompareTag("EffectZone"))
         {
-            ScreenEffects.Instance.panel.SetActive(true);
+            CanvasController.instance.sodaPanel.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ScreenEffects.Instance.panel.SetActive(false);
+        CanvasController.instance.sodaPanel.SetActive(false);
     }
-
-
-
 }

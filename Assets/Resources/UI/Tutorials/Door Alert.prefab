@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: destroyAfterTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4890471117338060840, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
+      propertyPath: inputs.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5233901335933402810, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
       propertyPath: m_Name
       value: Door Alert

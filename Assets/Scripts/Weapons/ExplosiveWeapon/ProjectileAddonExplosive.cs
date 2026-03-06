@@ -27,7 +27,7 @@ public class ProjectileAddonExplosive : ProjectileAddon
         rb.useGravity = true;
 
         // spawns explosive effects
-        Instantiate(explosiveEffect, transform.position, transform.rotation);
+        Instantiate(explosiveEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

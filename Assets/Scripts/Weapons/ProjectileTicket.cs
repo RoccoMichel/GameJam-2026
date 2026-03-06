@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.ProBuilder;
 
 public class ProjectileTicket : ProjectileAddon
 {

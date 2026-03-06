@@ -33,9 +33,11 @@ public class Enemy : Entity
     }
     private void Update()
     {
-        if (agent.enabled) 
+        if (agent.enabled)
+        {
             agent.destination = player.transform.position;
-        animator.SetFloat("speed", agent.velocity.magnitude);
+            animator.SetFloat("speed", agent.velocity.magnitude);
+        }            
 
         attackTimer += Time.deltaTime;
         if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
@@ -57,5 +59,12 @@ public class Enemy : Entity
         gameObject.layer = 0;
         animator.Play(Random.Range(0, 10) > 7 ? "Deadflip" : "Dead");
         Destroy(gameObject, 0.7f);
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(Resources.Load<GameObject>("Effects/Zombie Dead"), 
+            transform.position + Vector3.down * 0.8f, 
+            Quaternion.Euler(new Vector3(270, 0, 0) + transform.rotation.eulerAngles));
     }
 }

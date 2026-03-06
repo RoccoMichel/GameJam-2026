@@ -27,11 +27,6 @@ public class WaveManager : MonoBehaviour
     }
     private void Update()
     {
-        if (currentWaveIndex >= waves.Length)
-        {
-            GameController.Instance.GameWon();
-        
-        }
         if (!isTimerOn) return;
         if (timer < waveDuration)
         {
@@ -73,10 +68,6 @@ public class WaveManager : MonoBehaviour
         if (PlayerPrefs.GetInt($"{SceneManager.GetActiveScene().buildIndex}Highscore", 0) < currentWaveIndex + 1)
             PlayerPrefs.SetInt($"{SceneManager.GetActiveScene().buildIndex}Highscore", currentWaveIndex + 1);
 
-        if (currentWaveIndex >= waves.Length)
-        {
-            GameController.Instance.GameWon();
-        }
         else StartCoroutine(startNext());
     }
     public IEnumerator startNext()

@@ -12,6 +12,10 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private Image crosshair;
     [SerializeField] internal Slider staminaBar;
 
+    [Header("References")]
+    public GameObject damagePanel;
+    public GameObject sodaPanel;
+
     internal PlayerThrow weapon;
     private InputAction pauseAction;
     private GameObject optionMenu;
@@ -38,7 +42,7 @@ public class CanvasController : MonoBehaviour
     private void Update()
     {
         infoDisplay.text = Mathf.Ceil(player.Health) + " HP\n";
-        if (weapon != null) infoDisplay.text += weapon.totalThrows;
+        if (weapon != null) infoDisplay.text += $"{weapon.totalThrows} ROUNDS";
 
         if (pauseAction.WasPressedThisFrame() && optionMenu == null)
             optionMenu = InstantiateMenu("Options Menu");

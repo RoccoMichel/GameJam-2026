@@ -9,20 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: f6c73c43ce011bf44b9c77fbb11e083d
   - enabled: 1
-    path: Assets/Scenes/Rocco Scene.unity
-    guid: 52ce49a7ae192c14589e6e222987e773
-  - enabled: 1
-    path: Assets/Scenes/GameOverScene.unity
-    guid: ad34326593b2346409842c13c15d2c0c
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Game Scene.unity
+    guid: 9473639117348a941822628833274bb3
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 7e6c0d164d4596c49882f73f558d46ad
   - enabled: 1
-    path: Assets/Scenes/Game Scene.unity
-    guid: 9473639117348a941822628833274bb3
+    path: Assets/Scenes/GameOverScene.unity
+    guid: ad34326593b2346409842c13c15d2c0c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

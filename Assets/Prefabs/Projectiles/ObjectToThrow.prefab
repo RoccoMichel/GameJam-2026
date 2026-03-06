@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5883642385144366343}
   - component: {fileID: 9036812092323769449}
   - component: {fileID: -4134321224839238874}
+  - component: {fileID: -322340294519573216}
   m_Layer: 0
   m_Name: ObjectToThrow
   m_TagString: Untagged
@@ -152,3 +153,17 @@ MonoBehaviour:
   damage: 10
   rb: {fileID: 9036812092323769449}
   targetHit: 0
+--- !u!114 &-322340294519573216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068884295988630467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a73c83458b3e34890ad2af380cbb7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfter: 1
+  afterSeconds: 10

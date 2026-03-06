@@ -8,6 +8,7 @@ public class PlayerThrow : MonoBehaviour
     public Transform attackPoint;
     public GameObject objectToThrow;
     [SerializeField] private Sprite crosshair;
+    [SerializeField] private string animationName;
 
     [Header("Settings")]
     public bool infiniteThrows;
@@ -26,8 +27,10 @@ public class PlayerThrow : MonoBehaviour
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
-        Refill();
+        animator = Camera.main.transform.GetComponent<Animator>();
         readyToThrow = true;
+
+        Refill();
     }
 
     private void Update()
@@ -42,7 +45,7 @@ public class PlayerThrow : MonoBehaviour
     {
         if (totalThrows <= 0 && !infiniteThrows) return; // out of ammo
 
-        //animator.Play("Attack");
+        if (animationName != string.Empty) animator.Play(animationName, 1);
         readyToThrow = false;
 
         // Instantiate objects to throw

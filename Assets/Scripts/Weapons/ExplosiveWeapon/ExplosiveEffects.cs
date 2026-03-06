@@ -30,13 +30,12 @@ public class ExplosiveEffects : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
-
         yield return new WaitForSeconds(lastingTime);
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        ScreenEffects.Instance.panel.SetActive(false);
+        CanvasController.instance.sodaPanel.SetActive(false);
     }
 }

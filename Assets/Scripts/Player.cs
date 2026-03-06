@@ -3,15 +3,10 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    [SerializeField] public GameObject damagePanel;
- 
     public override void Die()
     {
-        if(immortal)
-        print("Player died");
-        else
-        GameController.Instance.GameOver();
-        //Felix hat einen kleinen Schwanz.
+        if (immortal) print("Player died");
+        else GameController.Instance.GameOver();
     }
 
     protected override void OnReset()
@@ -24,13 +19,12 @@ public class Player : Entity
     {
         base.Damage(amount);
         StartCoroutine(FlashRed());
-
     }
 
     public IEnumerator FlashRed()
     {
-        damagePanel.SetActive(true);
+        CanvasController.instance.damagePanel.SetActive(true);
         yield return new WaitForSeconds(0.1f);
-        damagePanel.SetActive(false);
+        CanvasController.instance.damagePanel.SetActive(false);
     }
 }
