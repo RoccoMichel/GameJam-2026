@@ -54,6 +54,11 @@ public class CanvasController : MonoBehaviour
         waveDisplay.text = $"WAVE {waveIndex + 1}";
     }
 
+    public void EscapeText()
+    {
+        waveDisplay.gameObject.GetComponent<Animator>().Play("Highlight");
+        waveDisplay.text = "ESCAPE";
+    }
     public void UpdateCrosshair(string crosshairName)
     {
         crosshair.sprite = Resources.Load<Sprite>("UI/Crosshairs/" + crosshairName);

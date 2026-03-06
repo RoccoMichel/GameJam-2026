@@ -35,7 +35,7 @@ public class WeaponSwitching : MonoBehaviour
     private void CheckSwitchButton()
     {
         for (int i = 0; i < switchAction.Length; i++)
-            if (switchAction[i].WasCompletedThisFrame()) 
+            if (switchAction[i].WasCompletedThisFrame() && unlocks[i]) 
                 WeaponPosition(i);
     }
 

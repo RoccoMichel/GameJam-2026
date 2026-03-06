@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b56a98bd5ea6a2e46b903095e9165e9f, type: 3}
     - target: {fileID: 5233901335933402810, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
       propertyPath: m_Name
-      value: Sprint Variant
+      value: Sprint
       objectReference: {fileID: 0}
     - target: {fileID: 7556166152630190262, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
       propertyPath: m_Pivot.x
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556166152630190262, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 7556166152630190262, guid: 1b9a60ac20350094cbe502eb43843117, type: 3}
       propertyPath: m_LocalPosition.x
