@@ -1354,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4c2198480b0f4a1418a95bf1e751a8c5, type: 3}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: throwForce
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: attackPoint

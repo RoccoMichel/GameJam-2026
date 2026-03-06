@@ -865,6 +865,10 @@ PrefabInstance:
       propertyPath: damagePanel
       value: 
       objectReference: {fileID: 1164283878}
+    - target: {fileID: 6314862112091749861, guid: 762082362715fb84392d39be0915a38b, type: 3}
+      propertyPath: throwForce
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 7272091199585310343, guid: 762082362715fb84392d39be0915a38b, type: 3}
       propertyPath: panel
       value: 

@@ -17,11 +17,18 @@ public class ExplosiveEffects : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // check if you hit an enemy
-        if (other.gameObject.GetComponent<Enemy>() != null)
+        if (other.gameObject.GetComponent<Entity>() != null)
         {
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
-
-            enemy.Damage(damage);
+            if (other.gameObject.GetComponent<Enemy>() != null)
+            {
+                Enemy enemy = other.gameObject.GetComponent<Enemy>();
+                enemy.Damage(damage);
+            }
+            else if (other.gameObject.GetComponent<Entity>() != null)
+            {
+                Entity enemy = other.gameObject.GetComponent<Entity>();
+                enemy.Damage(damage/10);
+            }
 
             StartCoroutine(DestroyObject());
         }
