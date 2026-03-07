@@ -6,12 +6,12 @@ public class PlayerScreenStatus : MonoBehaviour
     {
         if (other.CompareTag("EffectZone"))
         {
-            CanvasController.instance.sodaPanel.SetActive(true);
+            CanvasController.Instance.sodaPanel.SetActive(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        CanvasController.instance.sodaPanel.SetActive(false);
+        CanvasController.Instance.sodaPanel.SetActive(false);
     }
 }

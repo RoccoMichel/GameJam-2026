@@ -87,7 +87,7 @@ public class PlayerThrow : MonoBehaviour
 
     private void OnEnable()
     {
-        if (crosshair != null) CanvasController.instance.UpdateCrosshair(crosshair.name);
-        CanvasController.instance.weapon = this;
+        if (crosshair != null) CanvasController.Instance.UpdateCrosshair(crosshair.name);
+        CanvasController.Instance.weapon = this;
     }
 }

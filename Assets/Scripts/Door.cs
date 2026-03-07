@@ -32,7 +32,7 @@ public class Door : MonoBehaviour
             spawnPos.SetActive(true);
         }
         GameController.Instance.SFX("door-open");
-        CanvasController.instance.InstantiateTutorial("Door Alert");
+        CanvasController.Instance.InstantiateTutorial("Door Alert");
     }
 
     public void Close()

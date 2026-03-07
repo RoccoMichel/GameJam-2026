@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public bool debug;
 
     [Header("References")]
+    public Settings Settings;
     private AudioSource audioSource;
     private InputAction debugAction;
 
@@ -22,6 +23,11 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        if (Settings == null)
+        {
+            Debug.Break();
+            Debug.LogError("NO SETTINGS ASSIGNED!");
+        }
         audioSource = GetComponent<AudioSource>();
         debugAction = InputSystem.actions.FindAction("Debug");
 
@@ -109,16 +115,16 @@ public class GameController : MonoBehaviour
                 switch (index)
                 {
                     case 0:
-                        latest = CanvasController.instance.InstantiateTutorial("Look");
+                        latest = CanvasController.Instance.InstantiateTutorial("Look");
                         break;
                     case 1:
-                        latest = CanvasController.instance.InstantiateTutorial("Walk");
+                        latest = CanvasController.Instance.InstantiateTutorial("Walk");
                         break;
                     case 2:
-                        latest = CanvasController.instance.InstantiateTutorial("Shoot");
+                        latest = CanvasController.Instance.InstantiateTutorial("Shoot");
                         break;
                     case 3:
-                        latest = CanvasController.instance.InstantiateTutorial("Sprint");
+                        latest = CanvasController.Instance.InstantiateTutorial("Sprint");
                         break;
                 }
 

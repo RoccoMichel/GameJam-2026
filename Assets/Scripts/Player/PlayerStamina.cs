@@ -20,7 +20,7 @@ public class PlayerStamina : MonoBehaviour
     {
         StaminaAmount = 1;
         playerMovement = GetComponent<PlayerMovement>();
-        staminaBarSlider = CanvasController.instance.staminaBar;
+        staminaBarSlider = CanvasController.Instance.staminaBar;
         staminaBarImage = staminaBarSlider.fillRect.GetComponent<Image>();
     }
 

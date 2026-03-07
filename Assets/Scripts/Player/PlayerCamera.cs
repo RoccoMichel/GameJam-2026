@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCamera : MonoBehaviour
 {
-    public float mouseSen = 2.5f;
+    public float mouseSen = 1;
     [SerializeField] private Transform player;
     private float xRotation = 0f;
     private InputAction lookAction;
@@ -20,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void HandleLook()
     {
-        Vector2 input = lookAction.ReadValue<Vector2>() * mouseSen;
+        Vector2 input = lookAction.ReadValue<Vector2>() * mouseSen / 10;
 
         xRotation -= input.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

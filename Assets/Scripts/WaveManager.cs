@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
     public IEnumerator startNext()
     {
       
-        CanvasController.instance.UpdateWave(currentWaveIndex);
+        CanvasController.Instance.UpdateWave(currentWaveIndex);
 
         yield return new WaitForSeconds(waveTransitionTime);
         StartNextWave();

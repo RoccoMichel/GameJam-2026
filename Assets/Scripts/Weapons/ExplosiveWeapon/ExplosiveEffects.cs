@@ -43,6 +43,6 @@ public class ExplosiveEffects : MonoBehaviour
 
     private void OnDestroy()
     {
-        CanvasController.instance.sodaPanel.SetActive(false);
+        CanvasController.Instance.sodaPanel.SetActive(false);
     }
 }

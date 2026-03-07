@@ -5,7 +5,10 @@ using UnityEngine.Formats.Alembic.Importer;
 [RequireComponent(typeof(AlembicStreamPlayer))]
 public class AlembicPlayer : MonoBehaviour
 {
+    [SerializeField] private bool importAsset = true;
     [Header("Importing .abc settings")]
+    [Tooltip("file path if it is deeper nested in 'StreamingAssets'")]
+    [SerializeField] private string pathExtension;
     [SerializeField] private string abcFileName;
     [SerializeField] private Material material;
     [SerializeField] private TimeValue startTime;
@@ -20,19 +23,17 @@ public class AlembicPlayer : MonoBehaviour
     }
 
     [Header("Animation Settings")]
-    public bool loop = true;
+    [Tooltip("If animation should start from beginning when looping")]
+    public bool straightLooping = true;
     [Tooltip("If animation should reverse back to 0 when looping")]
     public bool pingPongLooping;
     public float speedModifier = 1;
     private AlembicStreamPlayer ABCplayer;
 
-    private void Awake()
+    private void ImportAsset()
     {
-        ABCplayer = GetComponent<AlembicStreamPlayer>();
-
-        // fix alembic file reference in build because unity hates .abc files
         if (string.IsNullOrEmpty(abcFileName)) return;
-        string path = Path.Combine(Application.streamingAssetsPath, abcFileName);
+        string path = Path.Combine(Application.streamingAssetsPath, pathExtension, abcFileName);
         ABCplayer.LoadFromFile(path);
 
         if (startTime.@override) ABCplayer.StartTime = startTime.newTime;
@@ -42,22 +43,30 @@ public class AlembicPlayer : MonoBehaviour
         transform.localScale = scale;
         foreach (MeshRenderer mr in gameObject.GetComponentsInChildren<MeshRenderer>()) mr.material = material;
     }
+
+    private void Awake()
+    {
+        ABCplayer = GetComponent<AlembicStreamPlayer>();
+
+        // fix alembic file reference in build because unity hates .abc files
+        if (importAsset) ImportAsset();
+    }
     private void Start()
     {
-        if (speedModifier == 0) Debug.LogWarning("Speed Modifier is 0! No Animation will play.");
-        if (pingPongLooping && !loop) Debug.LogWarning("Ping Pong Looping won't work if loop is false!");
+        if (speedModifier == 0) Debug.LogWarning($"Speed Modifier is 0 on {gameObject.name}! No Animation will play.");
+        if (straightLooping && pingPongLooping) Debug.Log($"{gameObject.name} can not have both looping modifiers on at once! straightLooping will override.");
     }
 
     private void Update()
     {
-        if (ABCplayer.CurrentTime >= ABCplayer.Duration && !loop) return;
+        if (ABCplayer.CurrentTime >= ABCplayer.Duration && !straightLooping) return;
 
         ABCplayer.CurrentTime += Time.deltaTime * speedModifier;
 
-        if ((ABCplayer.CurrentTime >= ABCplayer.Duration || ABCplayer.CurrentTime <= 0) && loop)
+        if ((ABCplayer.CurrentTime >= ABCplayer.Duration || ABCplayer.CurrentTime <= 0))
         {
-            if (pingPongLooping) speedModifier *= -1;
-            else ABCplayer.CurrentTime = 0;
+            if (straightLooping) ABCplayer.CurrentTime = 0;
+            else if (pingPongLooping) speedModifier *= -1;
         }
     }
 }

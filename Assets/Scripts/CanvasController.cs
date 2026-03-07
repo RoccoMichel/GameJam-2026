@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
 {
-    public static CanvasController instance;
+    public static CanvasController Instance { get; private set; }
+    [SerializeField] private bool fadeInEffect = true;
     [SerializeField] private TMP_Text infoDisplay;
     [SerializeField] private TMP_Text waveDisplay;
     [SerializeField] private Image crosshair;
@@ -24,7 +25,7 @@ public class CanvasController : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     private void Start()
@@ -37,6 +38,8 @@ public class CanvasController : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         pauseAction = InputSystem.actions.FindAction("Pause");
+
+        if (fadeInEffect) InstantiateMenu("FadeOutEffect");
     }
 
     private void Update()

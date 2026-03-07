@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3a460e5758b5b42b53ad7472b4a8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  importAsset: 1
+  pathExtension: 
   abcFileName: waterFLYING.abc
   material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
   startTime:
@@ -55,7 +57,7 @@ MonoBehaviour:
     newTime: 0
   scale: {x: 50, y: 50, z: 50}
   offset: {x: 0, y: 0, z: 0}
-  loop: 1
+  straightLooping: 0
   pingPongLooping: 1
   speedModifier: 5
 --- !u!114 &3766186431056605158
@@ -194,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aedd89ea76f83f48a08eb7cf831a45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 25
   rb: {fileID: 0}
   targetHit: 0
   explosiveEffect: {fileID: 4785381796460332499, guid: b7d5b83571ccff84984271860e91cad4, type: 3}

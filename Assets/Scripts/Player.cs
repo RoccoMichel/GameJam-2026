@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    [Header("Player Healing")]
-    public float healRate = 1f;
-    public float timeUntilHeal = 6;
     private float timer = 0;
+    private Settings settings;
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+        settings = GameController.Instance.Settings;
+    }
+
     public override void Die()
     {
         if (immortal) print("Player died");
@@ -15,8 +20,8 @@ public class Player : Entity
     private void Update()
     {
         // Heal Player when they haven't taken damage for some time
-        timer = Mathf.Clamp(timer += Time.deltaTime, 0, timeUntilHeal);
-        if (timer >= timeUntilHeal) Heal(healRate * Time.deltaTime);
+        timer = Mathf.Clamp(timer += Time.deltaTime, 0, settings.timeUntilHeal);
+        if (timer >= settings.timeUntilHeal) Heal(settings.playerHealRate * Time.deltaTime);
     }
     protected override void OnReset()
     {
@@ -33,8 +38,8 @@ public class Player : Entity
 
     public IEnumerator FlashRed()
     {
-        CanvasController.instance.damagePanel.SetActive(true);
+        CanvasController.Instance.damagePanel.SetActive(true);
         yield return new WaitForSeconds(0.1f);
-        CanvasController.instance.damagePanel.SetActive(false);
+        CanvasController.Instance.damagePanel.SetActive(false);
     }
 }

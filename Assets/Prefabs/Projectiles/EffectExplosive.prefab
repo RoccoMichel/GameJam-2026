@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3a460e5758b5b42b53ad7472b4a8da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  importAsset: 1
+  pathExtension: 
   abcFileName: waterFLOOR.abc
   material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
   startTime:
@@ -55,7 +57,7 @@ MonoBehaviour:
     newTime: 0
   scale: {x: 10, y: 10, z: 10}
   offset: {x: 0, y: 0, z: 0}
-  loop: 0
+  straightLooping: 0
   pingPongLooping: 0
   speedModifier: 3
 --- !u!114 &2548685889224508375
@@ -130,7 +132,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.2, y: 4.2, z: 4.2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1447858273081430670}
@@ -249,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96427978e7e67ec4ea916685b84fcbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastingTime: 1.5
+  lastingTime: 0.8
 --- !u!65 &7940787391238469044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -269,5 +271,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Size: {x: 0.2, y: 0.1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
