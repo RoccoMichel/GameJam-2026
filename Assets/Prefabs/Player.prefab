@@ -180,8 +180,8 @@ Transform:
   - {fileID: 7719608618053586667}
   - {fileID: 6665345168016001819}
   - {fileID: 3478740314747204301}
-  - {fileID: 779878638135574914}
   - {fileID: 1011779054458494334}
+  - {fileID: 779878638135574914}
   - {fileID: 2625805719665990411}
   m_Father: {fileID: 7405319890257007672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -531,8 +531,6 @@ MonoBehaviour:
   identity: Player
   maxHealth: 100
   immortal: 0
-  healRate: 2.5
-  timeUntilHeal: 6
 --- !u!114 &415174814343828827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,8 +546,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 5305118535697999122}
   - {fileID: 807808945077425710}
-  - {fileID: 6015337333125832985}
   - {fileID: 6314862112091749861}
+  - {fileID: 6015337333125832985}
   unlocks: 01010101
 --- !u!114 &520385453052210355
 MonoBehaviour:
@@ -1300,7 +1298,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4302021410151808080, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4302021410151808080, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1356,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4c2198480b0f4a1418a95bf1e751a8c5, type: 3}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: throwForce
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: attackPoint
@@ -1372,11 +1370,11 @@ PrefabInstance:
       objectReference: {fileID: 774830381293489321, guid: abed368b9175301418cf3107c69f6025, type: 3}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: throwCooldown
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: throwUpwardForce
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935251181863783599, guid: 787241984e4551d448f29f9d349b45b8, type: 3}
       propertyPath: refillIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2935251181863783599, guid: 787241984e4551d448f29f9d349b45b8, type: 3}
       propertyPath: restockDurationSeconds

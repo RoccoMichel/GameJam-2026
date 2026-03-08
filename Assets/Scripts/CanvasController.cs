@@ -88,6 +88,12 @@ public class CanvasController : MonoBehaviour
 
         return tutorialMenu;
     }
+    public GameObject InstantiateTutorial(string resourceName, bool canOverride)
+    {
+        if (tutorialMenu != null && !canOverride) return null;
+
+        return InstantiateTutorial(resourceName);
+    }
     public void InstantiateMenuVoid(string resourceName)
     {
         Instantiate((GameObject)Resources.Load($"UI/{resourceName}"), transform);

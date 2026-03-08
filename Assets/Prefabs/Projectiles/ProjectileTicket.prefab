@@ -57,6 +57,10 @@ PrefabInstance:
       value: ProjectileTicket
       objectReference: {fileID: 0}
     - target: {fileID: 5883642385144366343, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883642385144366343, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -103,7 +107,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   targetHit: 0
   penetrationAmount: 0
-  maxPenetration: 3
+  maxPenetration: 4
 --- !u!4 &6127079012830919564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1846276488216782054, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
@@ -127,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee84b6876689e3f41b8ba90f004d269c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 300
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee84b6876689e3f41b8ba90f004d269c, type: 3}
       propertyPath: m_LocalPosition.x
