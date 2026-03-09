@@ -56,6 +56,10 @@ public class Menu : MonoBehaviour
     {
         gameObject.SetActive(b);
     }
+    public void SetTimeScale(float newTimeScale)
+    {
+        Time.timeScale = newTimeScale;
+    }
 
     public void ExitGame()
     {

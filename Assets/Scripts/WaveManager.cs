@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -43,9 +41,7 @@ public class WaveManager : MonoBehaviour
     }
 
     private void StartWave(int waveIndex)
-    {
-       
-        
+    {        
         localCounters.Clear();
         foreach (WaveSegment segment in waves[waveIndex].segments)
         {
@@ -69,11 +65,10 @@ public class WaveManager : MonoBehaviour
 
         if (currentWaveIndex >= waves.Length) return;
 
-        else StartCoroutine(startNext());
+        else StartCoroutine(StartNext());
     }
-    public IEnumerator startNext()
-    {
-      
+    public IEnumerator StartNext()
+    {      
         CanvasController.Instance.UpdateWave(currentWaveIndex);
 
         yield return new WaitForSeconds(waveTransitionTime);
@@ -97,7 +92,9 @@ public class WaveManager : MonoBehaviour
 
             if (timeSinceSegmentStart / (1f / segment.spawnFrequency) > localCounters[i])
             {
-                Instantiate(segment.prefab, GetSpawnPos().position, Quaternion.identity, transform);
+                if (GameController.Instance.RequestEnemySpawn())
+                    Instantiate(segment.prefab, GetSpawnPos().position, Quaternion.identity, transform);
+
                 localCounters[i]++;
             }
         }

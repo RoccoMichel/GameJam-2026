@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
     public bool tutorial;
     public bool debug;
+    private int enemyCount;
 
     [Header("References")]
     public Settings Settings;
@@ -43,7 +44,17 @@ public class GameController : MonoBehaviour
     {
         audioSource.PlayOneShot(sound);
     }
+    public bool RequestEnemySpawn()
+    {
+        if (enemyCount >= Settings.maxEnemyCount) return false;
 
+        enemyCount++;
+        return true;
+    }
+    public void ReportEnemyDeath()
+    {
+        enemyCount--;
+    }
     /// <summary>
     /// Unlocks the weapon at the specified index for the player
     /// </summary>

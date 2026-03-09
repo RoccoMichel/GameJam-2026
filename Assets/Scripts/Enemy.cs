@@ -81,6 +81,7 @@ public class Enemy : Entity
     {
         agent.enabled = false;
         gameObject.layer = 0;
+        GameController.Instance.ReportEnemyDeath();
         animator.Play(Random.Range(0, 10) > 7 ? "Deadflip" : "Dead");
         Destroy(gameObject, 0.7f);
     }
