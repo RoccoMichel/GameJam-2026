@@ -30,15 +30,16 @@ public class WeaponRefill : MonoBehaviour
         if (filled && weaponManager.unlocks[refillIndex])
         {
             canRefill = true;
-            tutorial = CanvasController.Instance.InstantiateTutorial("Refill", false);
+            tutorial = CanvasController.Instance.InstantiateTutorial("Refill", true);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+      
         canRefill = false;
 
-        if (tutorial != null) Destroy(tutorial);
+        Destroy(tutorial);
     }
     public void Refill()
     {

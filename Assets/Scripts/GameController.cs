@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        HandleFPS();
         if (Settings == null)
         {
             Debug.Break();
@@ -145,5 +146,11 @@ public class GameController : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         yield break;
+    }
+
+    private void HandleFPS()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 }
