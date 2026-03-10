@@ -35,14 +35,18 @@ public class Enemy : Entity
 
         zombieRandomizer = Random.Range(0, 20);
     }
-    private void Update()
+
+    private void FixedUpdate()
     {
         if (agent.enabled)
         {
             agent.destination = player.transform.position;
             animator.SetFloat("speed", agent.velocity.magnitude);
-        }            
+        }
+    }
 
+    private void Update()
+    {
         attackTimer += Time.deltaTime;
         if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
 

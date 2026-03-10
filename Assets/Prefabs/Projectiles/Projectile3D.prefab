@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 1
-  afterSeconds: 20
+  afterSeconds: 8

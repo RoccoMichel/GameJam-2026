@@ -45,7 +45,11 @@ public class CanvasController : MonoBehaviour
     private void Update()
     {
         infoDisplay.text = Mathf.Ceil(player.Health) + " HP\n";
-        if (weapon != null) infoDisplay.text += $"{weapon.totalThrows} ROUNDS";
+        if (weapon != null)
+        {
+            infoDisplay.text += $"{weapon.totalThrows} ROUNDS";
+            if (weapon.totalThrows >= weapon.maxThrows) infoDisplay.text += " (FULL)";
+        }
 
         if (pauseAction.WasPressedThisFrame() && optionMenu == null)
             optionMenu = InstantiateMenu("Options Menu");

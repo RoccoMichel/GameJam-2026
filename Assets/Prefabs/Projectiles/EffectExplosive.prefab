@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   importAsset: 1
   pathExtension: 
-  abcFileName: waterFLOOR.abc
+  abcFileName: waterFLOOR
   material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
   startTime:
     override: 1

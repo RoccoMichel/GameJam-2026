@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -322340294519573216, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
+      propertyPath: afterSeconds
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1825689745501062276, guid: 9a7dad2a61a8ced418e95bf0a292406f, type: 3}
       propertyPath: m_Mesh
       value: 

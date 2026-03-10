@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   importAsset: 1
   pathExtension: 
-  abcFileName: waterFLYING.abc
+  abcFileName: waterFLYING
   material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
   startTime:
     override: 0
@@ -213,4 +213,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfter: 1
-  afterSeconds: 20
+  afterSeconds: 8

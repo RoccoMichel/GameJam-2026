@@ -33,7 +33,7 @@ public class AlembicPlayer : MonoBehaviour
     private void ImportAsset()
     {
         if (string.IsNullOrEmpty(abcFileName)) return;
-        string path = Path.Combine(Application.streamingAssetsPath, pathExtension, abcFileName);
+        string path = Path.Combine(Application.streamingAssetsPath, pathExtension, abcFileName + ".abc");
         ABCplayer.LoadFromFile(path);
 
         if (startTime.@override) ABCplayer.StartTime = startTime.newTime;
@@ -59,7 +59,7 @@ public class AlembicPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (ABCplayer.CurrentTime >= ABCplayer.Duration && !straightLooping) return;
+        if (ABCplayer.CurrentTime >= ABCplayer.Duration && !straightLooping && !pingPongLooping) return;
 
         ABCplayer.CurrentTime += Time.deltaTime * speedModifier;
 
