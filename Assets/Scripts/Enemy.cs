@@ -48,27 +48,10 @@ public class Enemy : Entity
     private void Update()
     {
         attackTimer += Time.deltaTime;
-        if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) Attack();
+        if (range > distanceFromPlayer && attackTimer > attackSpeedSeconds) 
+            Attack();
 
-        if (zombieRandomizer == Random.Range(0, 20))
-        {
-            zombieRandomizer = Random.Range(0, 2);
-            switch (zombieRandomizer)
-            {
-                case 0:
-                    GameController.Instance.SFX("zombie-moan-1");
-                    zombieRandomizer = Random.Range(10, 50);
-                    break;
-                case 1:
-                    GameController.Instance.SFX("zombie-moan-2");
-                    zombieRandomizer = Random.Range(10, 50);
-                    break;
-                case 2:
-                    GameController.Instance.SFX("zombie-moan-3");
-                    zombieRandomizer = Random.Range(10, 50);
-                    break;
-            }
-        }
+        ZombieMoan();
     }
 
     public void Attack()
@@ -96,4 +79,29 @@ public class Enemy : Entity
             transform.position + Vector3.down * 0.8f, 
             Quaternion.Euler(new Vector3(270, 0, 0) + transform.rotation.eulerAngles));
     }
+
+    private void ZombieMoan()
+    {
+        if (zombieRandomizer == Random.Range(0, 20))
+        {
+            zombieRandomizer = Random.Range(0, 2);
+            switch (zombieRandomizer)
+            {
+                case 0:
+                    GameController.Instance.SFX("zombie-moan-1");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+                case 1:
+                    GameController.Instance.SFX("zombie-moan-2");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+                case 2:
+                    GameController.Instance.SFX("zombie-moan-3");
+                    zombieRandomizer = Random.Range(10, 50);
+                    break;
+            }
+        }
+    }
+
+
 }
