@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Settings", menuName = "Scriptable Objects/Settings")]
 public class Settings : ScriptableObject
 {
+    [Header("Game Settings")]
+    public int targetFrameRate = 60;
+
     [Header("Player Settings")]
     [Tooltip("How much the player heals per second")]
     public float playerHealRate = 1.5f;
