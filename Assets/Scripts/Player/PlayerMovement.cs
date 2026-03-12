@@ -67,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
                 playerStamina.StaminaAmount -= staminaDepletion * Time.deltaTime;
 
             }
+            else if (sprintAction.WasPressedThisFrame() && playerStamina.canRun == false)
+                CanvasController.Instance.InstantiateTutorial("Stamina", false);
 
             inputVector = new Vector3(moveAction.ReadValue<Vector2>().x, 0f, moveAction.ReadValue<Vector2>().y);
             inputVector.Normalize();

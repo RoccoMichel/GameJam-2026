@@ -211,6 +211,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f3109cacb59d4504ca7bb91d86b303f7, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f3109cacb59d4504ca7bb91d86b303f7, type: 3}
       propertyPath: m_Name
       value: lamp
@@ -277,6 +281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 45.621994
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 23861439f266c4643a3532d4b6c2d32d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23861439f266c4643a3532d4b6c2d32d, type: 3}
       propertyPath: m_Name
       value: table
@@ -342,6 +350,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 066ac0d9a0da36e47a5f261099bce6b2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 066ac0d9a0da36e47a5f261099bce6b2, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 066ac0d9a0da36e47a5f261099bce6b2, type: 3}
       propertyPath: m_Name
