@@ -75,7 +75,6 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        print(System.Decimal.Round((decimal)(Time.deltaTime * 1000), 2));
         if (Application.targetFrameRate != Settings.targetFrameRate)
             Application.targetFrameRate = Settings.targetFrameRate;
 
