@@ -104,7 +104,8 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        Invoke(nameof(LoadGameOverScene), 1f);
+        LoadGameOverScene();
+        // Invoke(nameof(LoadGameOverScene), 1f);
     }
 
     private void LoadGameOverScene() => SceneManager.LoadScene("GameOverScene");

@@ -5,6 +5,7 @@ public class Settings : ScriptableObject
 {
     [Header("Game Settings")]
     public int targetFrameRate = 60;
+    public int currentWave = 0; // gets read in death scene
 
     [Header("Player Settings")]
     [Tooltip("How much the player heals per second")]

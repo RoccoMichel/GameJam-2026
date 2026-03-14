@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049eebb68ca9bb045aaaf461a3c08099, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
+  targetFrameRate: 60
+  currentWave: 3
   playerHealRate: 1.5
   timeUntilHeal: 5.5
   maxEnemyCount: 35

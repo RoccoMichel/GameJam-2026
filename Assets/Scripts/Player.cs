@@ -14,7 +14,7 @@ public class Player : Entity
 
     public override void Die()
     {
-        Camera.main.GetComponent<Animator>().Play("Death");
+        // Camera.main.GetComponent<Animator>().Play("Death");
         if (immortal) print("Player died");
         else GameController.Instance.GameOver();
     }

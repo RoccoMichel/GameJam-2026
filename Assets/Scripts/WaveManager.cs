@@ -23,6 +23,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         StartNextWave();
+        CanvasController.Instance.UpdateWave(currentWaveIndex);
     }
     private void Update()
     {
@@ -41,7 +42,9 @@ public class WaveManager : MonoBehaviour
     }
 
     private void StartWave(int waveIndex)
-    {        
+    {
+        GameController.Instance.Settings.currentWave = waveIndex + 1;
+
         localCounters.Clear();
         foreach (WaveSegment segment in waves[waveIndex].segments)
         {
