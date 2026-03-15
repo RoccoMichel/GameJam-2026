@@ -92,7 +92,10 @@ public class GameController : MonoBehaviour
 
         // Buttons
         if (GUI.Button(new Rect(10, 70, 100, 20), "Reload")) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        if (GUI.Button(new Rect(10, 100, 100, 20), "Exit")) Application.Quit(); ;
+        if (GUI.Button(new Rect(10, 100, 100, 20), "Exit")) Application.Quit();
+
+        GUI.Label(new Rect(10, 130, 100, 20), "FOV: " + (int)Camera.main.fieldOfView);
+        Camera.main.fieldOfView = GUI.HorizontalSlider(new Rect(10, 150, 100, 20), Camera.main.fieldOfView, 10, 170);
     }
 
     private void Reset()
