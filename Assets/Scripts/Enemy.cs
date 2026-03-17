@@ -33,7 +33,7 @@ public class Enemy : Entity
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-        zombieRandomizer = Random.Range(0, 20);
+        zombieRandomizer = Random.Range(0, 30);
     }
 
     private void FixedUpdate()
@@ -56,6 +56,8 @@ public class Enemy : Entity
 
     public void Attack()
     {
+        RandomizeZombieRandomizer();
+        ZombieMoan();
         if (Health <= 0) return;
 
         attackTimer = 0;
@@ -82,7 +84,7 @@ public class Enemy : Entity
 
     private void ZombieMoan()
     {
-        if (zombieRandomizer == Random.Range(0, 20))
+        if (zombieRandomizer == Random.Range(0, 30))
         {
             zombieRandomizer = Random.Range(0, 2);
             switch (zombieRandomizer)
@@ -101,6 +103,11 @@ public class Enemy : Entity
                     break;
             }
         }
+    }
+
+    private void RandomizeZombieRandomizer()
+    {
+        zombieRandomizer = Random.Range(0, 20);
     }
 
 

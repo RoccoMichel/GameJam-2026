@@ -48,6 +48,21 @@ public class WeaponRefill : MonoBehaviour
         filled = false;
         canRefill = false;
         weaponManager.weapons[refillIndex].Refill();
+        switch (refillIndex)
+        {
+            case 0:
+                GameController.Instance.SFX("refill-popcorns");
+                break;
+            case 1:
+                GameController.Instance.SFX("refill_soda");
+                break;
+            case 2:
+                GameController.Instance.SFX("refill-tickets");
+                break;
+            case 3:
+                GameController.Instance.SFX("refill-glasses");
+                break;
+        }
         Invoke(nameof(Restock), restockDurationSeconds);
     }
     public void Restock()
