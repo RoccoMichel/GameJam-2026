@@ -58,6 +58,7 @@ public class Enemy : Entity
     {
         RandomizeZombieRandomizer();
         ZombieMoan();
+        RandomzieAttackSound();
         if (Health <= 0) return;
 
         attackTimer = 0;
@@ -110,5 +111,41 @@ public class Enemy : Entity
         zombieRandomizer = Random.Range(0, 20);
     }
 
-
+    private void RandomzieAttackSound()
+    {
+        zombieRandomizer = Random.Range(0, 6);
+        switch (zombieRandomizer)
+        {
+            case 0:
+                GameController.Instance.SFX("sound-hurt-1");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 1:
+                GameController.Instance.SFX("sound-hurt-2");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 2:
+                GameController.Instance.SFX("sound-hurt-3");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 3:
+                GameController.Instance.SFX("sound-hurt-4");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 4:
+                GameController.Instance.SFX("sound-hurt-5");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 5:
+                GameController.Instance.SFX("sound-hurt-6");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+            case 6:
+                GameController.Instance.SFX("sound-hurt-27");
+                zombieRandomizer = Random.Range(10, 50);
+                break;
+        }
+    }
 }
+
+

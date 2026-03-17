@@ -51,10 +51,10 @@ public class WeaponRefill : MonoBehaviour
         switch (refillIndex)
         {
             case 0:
-                GameController.Instance.SFX("refill-popcorns");
+                GameController.Instance.SFX("refill-popcorn");
                 break;
             case 1:
-                GameController.Instance.SFX("refill_soda");
+                GameController.Instance.SFX("refill-soda");
                 break;
             case 2:
                 GameController.Instance.SFX("refill-tickets");
