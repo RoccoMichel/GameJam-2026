@@ -1,13 +1,11 @@
 using UnityEngine;
-using UnityEngine.Timeline;
-using UnityEngine.UI;
 
 public class ProjectileAddonExplosive : ProjectileAddon
 {
     public GameObject explosiveEffect;
     public virtual void Awake()
     {
-        GameController.Instance.SFX("weapon-shoot-cola");
+        //GameController.Instance.SFX("weapon-shoot-cola");
     }
     public override void ProjectileLogic(Collision collision)
     {

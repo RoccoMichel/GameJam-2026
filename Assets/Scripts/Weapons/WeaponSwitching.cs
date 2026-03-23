@@ -6,10 +6,13 @@ public class WeaponSwitching : MonoBehaviour
     [SerializeField] internal PlayerThrow[] weapons;
     public bool[] unlocks;
 
+    private int previousWeaponIndex = 0;
+    private InputAction previousWeaponAction;
     private InputAction[] switchAction;
 
     private void Start()
     {
+        previousWeaponAction = InputSystem.actions.FindAction("Previous Weapon");
         switchAction = new InputAction[weapons.Length];
         for (int i = 0; i < weapons.Length; i++) switchAction[i] = InputSystem.actions.FindAction($"weapon{i + 1}");
 
@@ -17,6 +20,9 @@ public class WeaponSwitching : MonoBehaviour
     }
     private void Update()
     {
+        if (previousWeaponAction.WasPressedThisFrame() && GameController.Instance.Settings.canQuickSwap)
+            WeaponPosition(previousWeaponIndex);
+
         CheckSwitchButton();
     }
 
@@ -44,6 +50,11 @@ public class WeaponSwitching : MonoBehaviour
     {
         for (int i = 0; i < weapons.Length; i++)
         {
+            if (weapons[i].gameObject.activeInHierarchy && previousWeaponIndex != i)
+            {
+                previousWeaponIndex = i;
+            }
+
             if (i == weaponPosition)
             {
                 weapons[weaponPosition].gameObject.SetActive(true);

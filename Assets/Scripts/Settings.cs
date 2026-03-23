@@ -8,6 +8,8 @@ public class Settings : ScriptableObject
     public int currentWave = 0; // gets read in death scene
 
     [Header("Player Settings")]
+    [Tooltip("If the player can press 'Q' to quick switch to their previous weapon")]
+    public bool canQuickSwap = true;
     [Tooltip("How much the player heals per second")]
     public float playerHealRate = 1.5f;
     [Tooltip("Time in seconds before the player start to heal")]

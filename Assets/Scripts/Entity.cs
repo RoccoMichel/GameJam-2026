@@ -39,6 +39,10 @@ public class Entity : MonoBehaviour
     {
         immortal = newState;
     }
+    public void ToggleImmortality()
+    {
+        immortal = !immortal;
+    }
 
     public virtual void Die()
     {

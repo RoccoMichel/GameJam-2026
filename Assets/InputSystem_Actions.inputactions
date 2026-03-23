@@ -139,6 +139,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Previous Weapon",
+                    "type": "Button",
+                    "id": "f4115842-a53c-447a-939e-9f3804d839fe",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -711,6 +720,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "weapon4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b10fbac6-474b-41dc-bc02-6a59401bf35b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Previous Weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "791b58ca-81f1-41e6-8c2c-19ab95736bcd",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Previous Weapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

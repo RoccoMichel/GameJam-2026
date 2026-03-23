@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174692153630035005, guid: 3c18c502c224645429b876b31b458894, type: 3}
       propertyPath: damage
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3174692153630035005, guid: 3c18c502c224645429b876b31b458894, type: 3}
       propertyPath: maxHealth
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589858179729867962, guid: 3c18c502c224645429b876b31b458894, type: 3}
       propertyPath: m_Name
-      value: Zombie_BASE Variant
+      value: Zombie_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

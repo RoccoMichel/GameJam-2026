@@ -89,13 +89,21 @@ public class GameController : MonoBehaviour
         GUI.Label(new Rect(10, 10, 200, 20), $"ms per frame: {System.Decimal.Round((decimal)(Time.deltaTime * 1000), 2)}");
         GUI.Label(new Rect(10, 40, 200, 20), $"frame per second: {1f/Time.deltaTime}");
 
+        // FOV slider
+        GUI.Label(new Rect(10, 70, 100, 20), "FOV: " + (int)Camera.main.fieldOfView);
+        Camera.main.fieldOfView = GUI.HorizontalSlider(new Rect(10, 100, 100, 20), Camera.main.fieldOfView, 10, 170);
 
         // Buttons
-        if (GUI.Button(new Rect(10, 70, 100, 20), "Reload")) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        if (GUI.Button(new Rect(10, 100, 100, 20), "Exit")) Application.Quit();
-
-        GUI.Label(new Rect(10, 130, 100, 20), "FOV: " + (int)Camera.main.fieldOfView);
-        Camera.main.fieldOfView = GUI.HorizontalSlider(new Rect(10, 150, 100, 20), Camera.main.fieldOfView, 10, 170);
+        if (GUI.Button(new Rect(10, 130, 150, 40), "Toggle Mortality")) 
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().ToggleImmortality();
+        if (GUI.Button(new Rect(10, 180, 150, 40), "Unlock All Weapons")) 
+            GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponSwitching>().unlocks = new bool[] { true, true, true, true };
+        if (GUI.Button(new Rect(10, 230, 150, 40), "Open All Doors")) 
+            foreach (Door d in FindObjectsByType<Door>(FindObjectsInactive.Include, FindObjectsSortMode.None)) d.Open();
+        if (GUI.Button(new Rect(10, 280, 150, 40), "Reload"))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (GUI.Button(new Rect(10, 330, 150, 40), "Exit")) 
+            Application.Quit();
     }
 
     private void Reset()
