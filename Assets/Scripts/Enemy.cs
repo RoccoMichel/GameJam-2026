@@ -40,7 +40,7 @@ public class Enemy : Entity
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         zombieRandomizer = Random.Range(0, 30);
-        defaultTime = Random.Range(5, 25);
+        defaultTime = Random.Range(5, 10);
     }
 
     private void FixedUpdate()
@@ -103,14 +103,17 @@ public class Enemy : Entity
                 case 0:
                     zombieMoan1.Play();
                     zombieRandomizer = Random.Range(10, 50);
+                    defaultTime = Random.Range(5, 25);
                     break;
                 case 1:
                     zombieMoan2.Play();
                     zombieRandomizer = Random.Range(10, 50);
+                    defaultTime = Random.Range(5, 25);
                     break;
                 case 2:
                     zombieMoan3.Play();
                     zombieRandomizer = Random.Range(10, 50);
+                    defaultTime = Random.Range(5, 25);
                     break;
             }
             Debug.Log("Switch broken");
