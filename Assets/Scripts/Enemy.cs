@@ -10,6 +10,12 @@ public class Enemy : Entity
     public float speed = 5;
     public float range = 2.5f;
 
+    public AudioSource zombieMoan1;
+    public AudioSource zombieMoan2;
+    public AudioSource zombieMoan3;
+    private float currentTime;
+    private float defaultTime;
+
     private Animator animator;
 
     private int zombieRandomizer;
@@ -34,6 +40,7 @@ public class Enemy : Entity
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
         zombieRandomizer = Random.Range(0, 30);
+        defaultTime = Random.Range(5, 25);
     }
 
     private void FixedUpdate()
@@ -83,26 +90,31 @@ public class Enemy : Entity
             Quaternion.Euler(new Vector3(270, 0, 0) + transform.rotation.eulerAngles));
     }
 
+    // Used in update
     private void ZombieMoan()
     {
-        if (zombieRandomizer == Random.Range(0, 30))
+        currentTime += 1 * Time.deltaTime;
+
+        if (currentTime >= defaultTime)
         {
             zombieRandomizer = Random.Range(0, 2);
             switch (zombieRandomizer)
             {
                 case 0:
-                    GameController.Instance.SFX("zombie-moan-1");
+                    zombieMoan1.Play();
                     zombieRandomizer = Random.Range(10, 50);
                     break;
                 case 1:
-                    GameController.Instance.SFX("zombie-moan-2");
+                    zombieMoan2.Play();
                     zombieRandomizer = Random.Range(10, 50);
                     break;
                 case 2:
-                    GameController.Instance.SFX("zombie-moan-3");
+                    zombieMoan3.Play();
                     zombieRandomizer = Random.Range(10, 50);
                     break;
             }
+            Debug.Log("Switch broken");
+            currentTime = 0;
         }
     }
 
