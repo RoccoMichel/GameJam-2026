@@ -50,6 +50,9 @@ MonoBehaviour:
   objectToThrow: {fileID: 774830381293489321, guid: 36b4039b350b7d2499c44323db872a72, type: 3}
   crosshair: {fileID: 21300000, guid: 7e505cb33f98ad94e9260515651c0c79, type: 3}
   animationName: Shoot Popcorn
+  SFXFileNames:
+  - shoot-popcorn-1
+  - shoot-popcorn-2
   infiniteThrows: 0
   totalThrows: 200
   maxThrows: 200
@@ -106,6 +109,8 @@ MonoBehaviour:
   objectToThrow: {fileID: 6529805637024508367, guid: 862b3ec3a5528e240a45136a6ba536c1, type: 3}
   crosshair: {fileID: 21300000, guid: 0649c6e9728090a4da0702243422c810, type: 3}
   animationName: Shoot Soda
+  SFXFileNames:
+  - shoot-popcorn-2
   infiniteThrows: 0
   totalThrows: 50
   maxThrows: 50
@@ -1291,6 +1296,10 @@ PrefabInstance:
       propertyPath: throwCooldown
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
+      propertyPath: 'SFXFileNames.Array.data[0]'
+      value: shoot-glasses
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 9221322424655520926, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
@@ -1403,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
       propertyPath: throwUpwardForce
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069441675841101003, guid: c92a7025ceef20b46b614114120bbfe1, type: 3}
+      propertyPath: SFXFileNames.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

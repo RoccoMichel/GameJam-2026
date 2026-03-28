@@ -30,7 +30,7 @@ public class ProjectileAddonExplosive : ProjectileAddon
 
         // spawns explosive effects
         Instantiate(explosiveEffect, transform.position, Quaternion.identity);
-        GameController.Instance.SFX("sound-cola-floor");
+        GameController.Instance.SFX("cola-floor");
         Destroy(gameObject);
     }
 }

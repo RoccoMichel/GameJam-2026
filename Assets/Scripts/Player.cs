@@ -20,7 +20,7 @@ public class Player : Entity
     }
     private void Update()
     {
-        // Heal Player when they haven't taken damage for some time
+        // Heal Player when they have not taken damage for some time
         timer = Mathf.Clamp(timer += Time.deltaTime, 0, settings.timeUntilHeal);
         if (timer >= settings.timeUntilHeal) Heal(settings.playerHealRate * Time.deltaTime);
     }

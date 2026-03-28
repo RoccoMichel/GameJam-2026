@@ -6,7 +6,7 @@ public class ProjectileAddon3DExplosive : ProjectileAddonExplosive
 
     public override void Awake()
     {
-        GameController.Instance.SFX("sound-weapon-3DLand");
+        GameController.Instance.SFX("glasses-floor");
     }
     public override void ProjectileLogic(Collision collision)
     {

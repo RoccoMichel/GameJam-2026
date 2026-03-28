@@ -9,6 +9,7 @@ public class PlayerThrow : MonoBehaviour
     public GameObject objectToThrow;
     [SerializeField] private Sprite crosshair;
     [SerializeField] private string animationName;
+    [SerializeField] private string[] SFXFileNames;
 
     [Header("Settings")]
     public bool infiniteThrows;
@@ -48,7 +49,7 @@ public class PlayerThrow : MonoBehaviour
         if (animationName != string.Empty) animator.Play(animationName, 1);
         readyToThrow = false;
 
-        GameController.Instance.SFX("weapon-shoot-popcorn");
+        GameController.Instance.SFX(SFXFileNames[Random.Range(0, SFXFileNames.Length)]);
 
         // Instantiate objects to throw
         GameObject projectile = Instantiate(objectToThrow, attackPoint.position, cam.rotation);

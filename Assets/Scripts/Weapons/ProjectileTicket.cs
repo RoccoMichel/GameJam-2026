@@ -5,10 +5,6 @@ public class ProjectileTicket : ProjectileAddon
     [SerializeField] private int penetrationAmount;
     [SerializeField] private int maxPenetration;
 
-    private void Awake()
-    {
-        GameController.Instance.SFX("sound-weapon-shoot");
-    }
     private void OnTriggerEnter(Collider other)
     {
         // check if you hit an enemy

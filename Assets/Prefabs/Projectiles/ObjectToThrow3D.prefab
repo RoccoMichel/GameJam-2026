@@ -49,8 +49,12 @@ MonoBehaviour:
   attackPoint: {fileID: 0}
   objectToThrow: {fileID: 5068884295988630467, guid: ffe89cbccd7e0d1429a221c5bcb02d09, type: 3}
   crosshair: {fileID: 21300000, guid: 0649c6e9728090a4da0702243422c810, type: 3}
+  animationName: 
+  SFXFileNames:
+  - shoot-ticket
   infiniteThrows: 0
   totalThrows: 100
+  maxThrows: 100
   throwCooldown: 2
   throwForce: 5
   throwUpwardForce: 3
