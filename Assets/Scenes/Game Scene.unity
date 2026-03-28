@@ -56286,16 +56286,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8949227187476139046, guid: 3c6b4dda5d844d545a6a846f627c33ad, type: 3}
+      propertyPath: m_Width
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949227187476139046, guid: 3c6b4dda5d844d545a6a846f627c33ad, type: 3}
       propertyPath: m_EndPoint.x
-      value: 0.00000009003861
+      value: 0.00000010030726
       objectReference: {fileID: 0}
     - target: {fileID: 8949227187476139046, guid: 3c6b4dda5d844d545a6a846f627c33ad, type: 3}
       propertyPath: m_EndPoint.y
-      value: 0.17001104
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8949227187476139046, guid: 3c6b4dda5d844d545a6a846f627c33ad, type: 3}
       propertyPath: m_EndPoint.z
-      value: 0.6778139
+      value: 1.5226511
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
