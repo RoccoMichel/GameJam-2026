@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 7354658903575774590}
   attackPoint: {fileID: 2625805719665990411}
-  objectToThrow: {fileID: 6529805637024508367, guid: 862b3ec3a5528e240a45136a6ba536c1, type: 3}
+  objectToThrow: {fileID: 6455024559319985667, guid: 268a654360471824e8ba13c29f8e776a, type: 3}
   crosshair: {fileID: 21300000, guid: 0649c6e9728090a4da0702243422c810, type: 3}
   animationName: Shoot Soda
   SFXFileNames:
