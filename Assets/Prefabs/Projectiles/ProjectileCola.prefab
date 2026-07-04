@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3366489405195762824}
-  - component: {fileID: 7091332549480414135}
-  - component: {fileID: 3766186431056605158}
   m_Layer: 0
   m_Name: 'waterFLYING (Missing Prefab with guid: 70ae97782e92b2a44b491fa2a2e6672b)'
   m_TagString: Untagged
@@ -33,73 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2390012285599079157}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7091332549480414135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3029528247568965540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3a460e5758b5b42b53ad7472b4a8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  importAsset: 1
-  pathExtension: 
-  abcFileName: waterFLYING
-  material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
-  startTime:
-    override: 0
-    newTime: 0
-  endTime:
-    override: 0
-    newTime: 0
-  scale: {x: 50, y: 50, z: 50}
-  offset: {x: 0, y: 0, z: 0}
-  straightLooping: 0
-  pingPongLooping: 1
-  speedModifier: 5
---- !u!114 &3766186431056605158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3029528247568965540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  streamSource: 1
-  streamDescriptor: {fileID: 0}
-  embeddedStreamDescriptor:
-    pathToAbc: 
-    settings:
-      normals: 1
-      tangents: 1
-      cameraAspectRatio: 2
-      importVisibility: 1
-      scaleFactor: 0.01
-      swapHandedness: 1
-      flipFaces: 0
-      interpolateSamples: 1
-      importPointPolygon: 1
-      importLinePolygon: 1
-      importTrianglePolygon: 1
-      importXform: 1
-      importCameras: 1
-      importMeshes: 1
-      importPoints: 0
-      importCurves: 1
-      createCurveRenderers: 0
-    mediaStartTime: 0
-    mediaEndTime: 0
-  startTime: -3.4028235e+38
-  endTime: 3.4028235e+38
-  currentTime: 0
-  vertexMotionScale: 1
 --- !u!1 &6529805637024508367
 GameObject:
   m_ObjectHideFlags: 0

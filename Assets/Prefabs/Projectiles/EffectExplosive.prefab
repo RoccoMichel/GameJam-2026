@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1447858273081430670}
-  - component: {fileID: 7596048478774027961}
-  - component: {fileID: 2548685889224508375}
   m_Layer: 0
   m_Name: 'waterFLOOR (Missing Prefab with guid: 922dc6ef59db3d041ba9c0aec0a3be0b)'
   m_TagString: Untagged
@@ -33,73 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8729218846426381384}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7596048478774027961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930043657385413696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d3a460e5758b5b42b53ad7472b4a8da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  importAsset: 1
-  pathExtension: 
-  abcFileName: waterFLOOR
-  material: {fileID: 2100000, guid: 2612311acd1ebd249bb0bda3c95cb73a, type: 2}
-  startTime:
-    override: 1
-    newTime: 1.863756
-  endTime:
-    override: 0
-    newTime: 0
-  scale: {x: 10, y: 10, z: 10}
-  offset: {x: 0, y: 0, z: 0}
-  straightLooping: 0
-  pingPongLooping: 0
-  speedModifier: 3
---- !u!114 &2548685889224508375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930043657385413696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6983ab2008f7a9f499b3f8cd6bec328d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  streamSource: 1
-  streamDescriptor: {fileID: 0}
-  embeddedStreamDescriptor:
-    pathToAbc: 
-    settings:
-      normals: 1
-      tangents: 1
-      cameraAspectRatio: 2
-      importVisibility: 1
-      scaleFactor: 0.01
-      swapHandedness: 1
-      flipFaces: 0
-      interpolateSamples: 1
-      importPointPolygon: 1
-      importLinePolygon: 1
-      importTrianglePolygon: 1
-      importXform: 1
-      importCameras: 1
-      importMeshes: 1
-      importPoints: 0
-      importCurves: 1
-      createCurveRenderers: 0
-    mediaStartTime: 0
-    mediaEndTime: 0
-  startTime: -3.4028235e+38
-  endTime: 3.4028235e+38
-  currentTime: 0
-  vertexMotionScale: 1
 --- !u!1 &4785381796460332499
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,6 +97,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -187,9 +120,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &6318060320774148959
 SphereCollider:
@@ -219,10 +154,10 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4785381796460332499}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Mass: 20
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

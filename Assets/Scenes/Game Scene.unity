@@ -8332,6 +8332,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Movie
       objectReference: {fileID: 0}
+    - target: {fileID: 4146486641730208687, guid: c6a6aa19b5239c1439cede848c62bd34, type: 3}
+      propertyPath: m_Url
+      value: https://roccomichel.com/video/biograf.mp4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146486641730208687, guid: c6a6aa19b5239c1439cede848c62bd34, type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7303312416374632311, guid: c6a6aa19b5239c1439cede848c62bd34, type: 3}
       propertyPath: m_LocalScale.x
       value: 14.8
